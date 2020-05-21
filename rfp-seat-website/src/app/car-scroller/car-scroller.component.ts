@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-car-scroller',
@@ -7,24 +8,40 @@ import { Component, OnInit, HostListener } from '@angular/core';
 })
 export class CarScrollerComponent implements OnInit {
 
-  innerHeight: number = 0;
+  scrollPercentage = 0;
+  movableHeight: number;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.innerHeight = document.documentElement.scrollTop;
+    const middlePercentage = (((1920 / 2 - $('.movable').width() / 2) / 1920) * 100) + '%';
+    $('.movable').css({left: middlePercentage});
+    this.movableHeight = $('.movable').height();
+    this.updateMovable();
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    this.innerHeight = document.documentElement.scrollTop;
+    this.scrollPercentage = this.refreshPercentage();
   }
 
   @HostListener('window:scroll', ['$event'])
   doSomethingOnWindowsScroll($event: Event) {
-    const scrollOffset = document.documentElement.scrollTop;
-    this.innerHeight =document.documentElement.scrollLeft;
-    // console.log('window scroll: ', scrollOffset, this.innerHeight);
+    this.scrollPercentage = this.refreshPercentage();
+    this.updateMovable();
+  }
+
+  private refreshPercentage(): number {
+    const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) - this.movableHeight;
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+    const documentHeight = $(document).height();
+    const scrollPositionRelative = scrollPosition / (documentHeight - viewportHeight);
+    return scrollPositionRelative;
+  }
+
+  updateMovable() {
+    const percentage = (this.scrollPercentage * 100) + '%';
+    $('.movable').css({top: percentage});
   }
 
 }
