@@ -1,0 +1,14 @@
+.fixed-position{
+  display: block;
+  position: fixed;
+}
+
+.movable{
+  width: 100px;
+  height: 100px;
+  z-index: 4;
+}
+
+.movable-conatiner{
+  background-color: red;
+}
