@@ -1,6 +1,7 @@
 .fixed-position{
   display: block;
   position: fixed;
+
 }
 .movable{
   width: 50px;
@@ -9,4 +10,13 @@
 }
 .movable-conatiner{
   background-color: red;
+}
+
+.test-line{
+  height: 6px;
+  background-color:red;
+  top:7.5%;
+  width:100%;
+  z-index: 3;
+  padding: 0rem 6rem;
 }

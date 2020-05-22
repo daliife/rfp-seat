@@ -14,8 +14,8 @@ export class CarScrollerComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    const middlePercentage = (((1920 / 2 - $('.movable').width() / 2) / 1920) * 100) + '%';
-    $('.movable').css({left: middlePercentage});
+    // const middlePercentage = (((1920 / 2 - $('.movable').width() / 2) / 1920) * 100) + '%';
+    $('.movable').css({top: '5%'});
     this.movableHeight = $('.movable').height();
     this.updateMovable();
   }
@@ -41,7 +41,7 @@ export class CarScrollerComponent implements OnInit {
 
   updateMovable() {
     const percentage = (this.scrollPercentage * 100) + '%';
-    $('.movable').css({top: percentage});
+    $('.movable').css({left: percentage});
   }
 
 }
