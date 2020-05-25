@@ -11,10 +11,9 @@ export class VideoWrapperComponent implements OnInit {
 
   @Input() videoUrl: string;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   isYoutubeVideo() {
     return this.youtubeUrl !== undefined;

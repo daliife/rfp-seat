@@ -9,14 +9,10 @@ import * as $ from 'jquery';
 export class CarScrollerComponent implements OnInit {
 
   scrollPercentage = 0;
-  movableHeight: number;
 
   constructor() { }
 
   ngOnInit(): void {
-    // const middlePercentage = (((1920 / 2 - $('.movable').width() / 2) / 1920) * 100) + '%';
-    $('.movable').css({top: '5%'});
-    this.movableHeight = $('.movable').height();
     this.updateMovable();
   }
 
@@ -28,20 +24,32 @@ export class CarScrollerComponent implements OnInit {
   @HostListener('window:scroll', ['$event'])
   doSomethingOnWindowsScroll($event: Event) {
     this.scrollPercentage = this.refreshPercentage();
+    this.updateAnimation();
     this.updateMovable();
   }
 
   private refreshPercentage(): number {
-    const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0) - this.movableHeight;
+    const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
     const documentHeight = $(document).height();
     const scrollPositionRelative = scrollPosition / (documentHeight - viewportHeight);
     return scrollPositionRelative;
   }
 
-  updateMovable() {
-    const percentage = (this.scrollPercentage * 100) + '%';
+  private updateMovable() {
+    const fittingFactor = 1 - $('.movable').width() / $('#car').width();
+    const percentage = this.scrollPercentage * 100 * fittingFactor + '%';
     $('.movable').css({left: percentage});
+  }
+
+  private updateAnimation() {
+    if (this.scrollPercentage > 0.1) {
+      $('#navigation-bar').addClass('animate__slideInDown');
+      $('#navigation-bar').removeClass('animate__slideOutUp');
+    } else {
+      $('#navigation-bar').addClass('animate__slideOutUp');
+      $('#navigation-bar').removeClass('animate__slideInDown');
+    }
   }
 
 }
