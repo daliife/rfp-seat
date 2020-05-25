@@ -1,0 +1,43 @@
+#scene{
+  height: 512px;
+  background-color: black;
+}
+
+.text-parallax{
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.background{
+  background: url(../../assets/background.jpg) no-repeat 50% 100%;
+  height: 100%;
+}
+
+.wave{
+  bottom: 0;
+  margin: 0px 0px;
+  background-position: center bottom;
+  background-size: auto 101%;
+  height: 86px;
+  background-image: url(../../assets/waves1.png);
+}
+
+.lighthouse {
+  -webkit-transform-origin: 50% 90%;
+  -moz-transform-origin: 50% 90%;
+  transform-origin: 50% 90%;
+  -webkit-animation: lighthouse 4s 0.1s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  -moz-animation: lighthouse 4s 0.1s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  animation: lighthouse 4s 0.1s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  margin: 0px -64px;
+  background-size: 128px 224px;
+  height: 224px;
+  width: 128px;
+  background-image: url(../../assets/lighthouse.png);
+  background-repeat: no-repeat;
+  bottom: 64px;
+  position: absolute;
+  right: 20%;
+}
