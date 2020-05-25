@@ -1,9 +1,15 @@
 <app-navbar></app-navbar>
 
-<app-car-scroller></app-car-scroller>
+<!-- <app-car-scroller></app-car-scroller> -->
+
+<app-content-placeholder [num]=0 ></app-content-placeholder>
+
+<app-video-wrapper
+youtubeUrl='https://www.youtube.com/embed/zpOULjyy-n8?rel=0'
+></app-video-wrapper>
 
 <app-content-placeholder *ngFor="let el of [1,2,3]; let i = index;"
-  [num]=i
+  [num]=i+1
 ></app-content-placeholder>
 
 <app-footer></app-footer>

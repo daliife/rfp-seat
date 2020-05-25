@@ -7,6 +7,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ContentPlaceholderComponent } from './content-placeholder/content-placeholder.component';
 import { CarScrollerComponent } from './car-scroller/car-scroller.component';
+import { VideoWrapperComponent } from './video-wrapper/video-wrapper.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { CarScrollerComponent } from './car-scroller/car-scroller.component';
     FooterComponent,
     NavbarComponent,
     ContentPlaceholderComponent,
-    CarScrollerComponent
+    CarScrollerComponent,
+    VideoWrapperComponent
   ],
   imports: [
     BrowserModule,
