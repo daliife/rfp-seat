@@ -7,6 +7,12 @@ import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ContentPlaceholderComponent } from './content-placeholder/content-placeholder.component';
 import { CarScrollerComponent } from './car-scroller/car-scroller.component';
+import { VideoWrapperComponent } from './video-wrapper/video-wrapper.component';
+import { HomeComponent } from './home/home.component';
+import { FirstSceneComponent } from './first-scene/first-scene.component';
+import { SecondSceneComponent } from './second-scene/second-scene.component';
+import { ThirdSceneComponent } from './third-scene/third-scene.component';
+import { ClosingSceneComponent } from './closing-scene/closing-scene.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +20,13 @@ import { CarScrollerComponent } from './car-scroller/car-scroller.component';
     FooterComponent,
     NavbarComponent,
     ContentPlaceholderComponent,
-    CarScrollerComponent
+    CarScrollerComponent,
+    VideoWrapperComponent,
+    HomeComponent,
+    FirstSceneComponent,
+    SecondSceneComponent,
+    ThirdSceneComponent,
+    ClosingSceneComponent
   ],
   imports: [
     BrowserModule,
