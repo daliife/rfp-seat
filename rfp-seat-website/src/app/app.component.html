@@ -1,17 +1,15 @@
-<app-navbar></app-navbar>
+<app-car-scroller></app-car-scroller>
 
-<!-- <app-car-scroller></app-car-scroller> -->
+<app-home></app-home>
 
-<app-content-placeholder [num]=0 ></app-content-placeholder>
+<app-first-scene></app-first-scene>
 
-<app-video-wrapper
-youtubeUrl='https://www.youtube.com/embed/zpOULjyy-n8?rel=0'
-></app-video-wrapper>
+<app-second-scene></app-second-scene>
 
-<app-content-placeholder *ngFor="let el of [1,2,3]; let i = index;"
-  [num]=i+1
-></app-content-placeholder>
+<app-third-scene></app-third-scene>
 
-<app-footer></app-footer>
+<app-closing-scene></app-closing-scene>
+
+<app-video-wrapper youtubeUrl='https://www.youtube.com/embed/zpOULjyy-n8?rel=0'></app-video-wrapper>
 
 <router-outlet></router-outlet>
