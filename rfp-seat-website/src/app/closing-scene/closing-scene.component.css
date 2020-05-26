@@ -1,4 +1,7 @@
 .modal-dialog {
-  max-width: 1080px;
-  margin: 1.75rem auto;
+  max-width: 80%;
+}
+.modal-content {
+  background-color: black;
+  border-radius: 15px;
 }
