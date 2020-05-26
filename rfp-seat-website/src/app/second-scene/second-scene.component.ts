@@ -29,7 +29,7 @@ export class SecondSceneComponent implements AfterViewInit {
   private cx: CanvasRenderingContext2D;
 
   public ngAfterViewInit() {
-    this.width = document.getElementById("home-container").offsetWidth;
+    this.width = document.getElementById("canvas").offsetWidth;
     this.height = 721;
     // get the context
     const canvasEl: HTMLCanvasElement = this.canvas.nativeElement;
