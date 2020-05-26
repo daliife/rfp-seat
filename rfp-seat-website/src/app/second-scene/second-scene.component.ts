@@ -1,13 +1,16 @@
 import {
   Component,
-  OnInit,
+  Output,
   ViewChild,
   ElementRef,
   AfterViewInit,
   Input,
+  EventEmitter,
 } from "@angular/core";
 import { fromEvent } from "rxjs";
 import { switchMap, takeUntil, pairwise } from "rxjs/operators";
+
+import { MyRect } from "./rectangle.component";
 
 @Component({
   selector: "app-second-scene",
@@ -21,6 +24,7 @@ export class SecondSceneComponent implements AfterViewInit {
   // setting a width and height for the canvas
   @Input() public width;
   @Input() public height;
+  @Output() onDiscoverPath: EventEmitter<any> = new EventEmitter();
 
   private cx: CanvasRenderingContext2D;
 
@@ -96,6 +100,8 @@ export class SecondSceneComponent implements AfterViewInit {
     prevPos: { x: number; y: number },
     currentPos: { x: number; y: number }
   ) {
+    let rect = new MyRect(820, 591, 130, 130);
+
     // incase the context is not set
     if (!this.cx) {
       return;
@@ -125,6 +131,10 @@ export class SecondSceneComponent implements AfterViewInit {
       this.cx.moveTo(prevPos.x, prevPos.y);
       this.cx.lineTo(currentPos.x, currentPos.y);
       this.cx.stroke();
+
+      if (rect.contains(currentPos.x, currentPos.y)) {
+        this.onDiscoverPath.emit();
+      }
     }
   }
 }
