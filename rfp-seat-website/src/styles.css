@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: SeatBcn-Black;
+  src: url("./assets/SeatFonts/SeatBcn-Black.woff") format("woff");
+}
+@font-face {
+  font-family: SeatBcn-Light;
+  src: url("./assets/SeatFonts/SeatBcn-Light.woff") format("woff");
+}
+@font-face {
+  font-family: SeatBcn-Regular;
+  src: url("./assets/SeatFonts/SeatBcn-Regular.woff") format("woff");
+}
+
+* {
+  font-family: 'SeatBcn-Black', sans-serif;
+}
