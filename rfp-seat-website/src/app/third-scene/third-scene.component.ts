@@ -7,9 +7,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ThirdSceneComponent implements OnInit {
 
-  constructor() { }
+  flag = false;
 
-  ngOnInit(): void {
+  constructor() {}
+
+  ngOnInit(): void {}
+
+  selectOption(option: number) {
+    const newPath = '../../assets/road_' + option + '.png';
+    const element = document.querySelector('.floating-img');
+    if (!this.flag) {
+      $('.floating-img').attr('src', newPath);
+      element.classList.add('animate__fadeIn');
+      this.flag = true;
+    } else {
+      element.classList.remove('animate__fadeIn');
+      element.classList.add('animate__fadeOut');
+      element.addEventListener('animationend', () => {
+        $('.floating-img').attr('src', newPath);
+        element.classList.remove('animate__fadeOut');
+      });
+    }
+  }
+
+  fadeIn() {
+    if(this.flag) {
+      const element = document.querySelector('.floating-img');
+      element.classList.add('animate__fadeIn');
+    }
   }
 
 }
