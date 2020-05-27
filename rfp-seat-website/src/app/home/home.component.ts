@@ -17,7 +17,11 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     // PARALLAX
     const scene = document.getElementById('scene');
-    const parallaxInstance = new Parallax(scene, { relativeInput: false });
+    const parallaxInstance = new Parallax(scene,
+    {
+      relativeInput: false,
+      hoverOnly: true
+    });
     parallaxInstance.friction(0.2, 0.2);
 
     // COUNTER
