@@ -1,7 +1,45 @@
-<div id="home-container" class="container-fluid px-0">
+<div id="closing-container" class="container-fluid px-0">
   <div class="row mx-0">
       <div class="col-12 px-0">
-      <img src="../../assets/seat_4.jpg" class="img-fluid w-100">
+        <img src="../../assets/seat_4.jpg" class="img-fluid w-100">
       </div>
   </div>
+
+  <div class="row mx-0" style="text-align: center;">
+    <div class="col-12 px-0">
+
+      <!-- Download button-->
+      <a href="../../assets/demo.png" download="test" class="btn btn-primary close-section-button">Download</a>
+
+      <!-- Email button-->
+      <a href="mailto:some@email.com" target="_blank" class="btn btn-primary close-section-button">Email Us</a>
+
+      <!-- Youtube modal -->
+      <button type="button" class="btn btn-primary close-section-button" data-toggle="modal" data-target="#videoModal">
+        Show Video Modal
+      </button>
+
+      <!-- test floating button -->
+      <div class="avatar close-section-button">
+        <a href="https://codepen.io/MarioDesigns/">
+          <img class="image-button" src="../../assets/demo.png" alt="Skytsunami" />
+        </a>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModalTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
 </div>
