@@ -29,11 +29,11 @@
 }
 
 #navigation-bar{
-  height:150px;
+  height:100px;
 }
 
 #car{
   width: 100%;
-  margin: 40px;
+  margin: 0px 40px;
   background-color: lightgreen;
 }
