@@ -1,12 +1,14 @@
+// tslint:disable-next-line: quotemark
 import { Component, OnInit, HostListener } from "@angular/core";
-import * as $ from "jquery";
+import * as $ from 'jquery';
 
 @Component({
-  selector: "app-car-scroller",
-  templateUrl: "./car-scroller.component.html",
-  styleUrls: ["./car-scroller.component.css"],
+  selector: 'app-car-scroller',
+  templateUrl: './car-scroller.component.html',
+  styleUrls: ['./car-scroller.component.css'],
 })
 export class CarScrollerComponent implements OnInit {
+
   scrollPercentage = 0;
 
   constructor() {}
@@ -15,12 +17,12 @@ export class CarScrollerComponent implements OnInit {
     this.updateMovable();
   }
 
-  @HostListener("window:resize", ["$event"])
+  @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.scrollPercentage = this.refreshPercentage();
   }
 
-  @HostListener("window:scroll", ["$event"])
+  @HostListener('window:scroll', ['$event'])
   doSomethingOnWindowsScroll($event: Event) {
     this.scrollPercentage = this.refreshPercentage();
     this.updateAnimation();
@@ -37,30 +39,30 @@ export class CarScrollerComponent implements OnInit {
       document.documentElement.scrollTop ||
       document.body.scrollTop;
     const documentHeight = $(document).height();
-    const homeHeight = $("#home-container").height();
+    const homeHeight = $('#home-container').height();
     const scrollPositionRelative =
       (scrollPosition - homeHeight) /
       (documentHeight - viewportHeight - homeHeight);
     const percentageResult =
-      scrollPosition - $("#home-container").height() < 0
+      scrollPosition - $('#home-container').height() < 0
         ? 0
         : scrollPositionRelative;
     return percentageResult;
   }
 
   private updateMovable() {
-    const fittingFactor = 1 - $(".movable").width() / $("#car").width();
-    const percentage = this.scrollPercentage * 100 * fittingFactor + "%";
-    $(".movable").css({ left: percentage });
+    const fittingFactor = 1 - ($('.movable').width() + 80) / $('#car').width();
+    const percentage = this.scrollPercentage * 100 * fittingFactor + '%';
+    $('.movable').css({ left: percentage });
   }
 
   private updateAnimation() {
     if (this.scrollPercentage > 0) {
-      $("#navigation-bar").addClass("animate__slideInDown");
-      $("#navigation-bar").removeClass("animate__slideOutUp");
+      $('#navigation-bar').addClass('animate__slideInDown');
+      $('#navigation-bar').removeClass('animate__slideOutUp');
     } else {
-      $("#navigation-bar").addClass("animate__slideOutUp");
-      $("#navigation-bar").removeClass("animate__slideInDown");
+      $('#navigation-bar').addClass('animate__slideOutUp');
+      $('#navigation-bar').removeClass('animate__slideInDown');
     }
   }
 }
