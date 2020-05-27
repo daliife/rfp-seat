@@ -26,20 +26,22 @@ export class SecondSceneComponent implements AfterViewInit {
   @Input() public height;
   @Output() onDiscoverPath: EventEmitter<any> = new EventEmitter();
 
+  private canvasEl: HTMLCanvasElement;
+
   private cx: CanvasRenderingContext2D;
 
   public ngAfterViewInit() {
     this.width = document.getElementById("canvas").offsetWidth;
-    this.height = 721;
+    this.height = document.getElementById("canvas").offsetHeight;
     // get the context
-    const canvasEl: HTMLCanvasElement = this.canvas.nativeElement;
-    this.cx = canvasEl.getContext("2d");
+    this.canvasEl = this.canvas.nativeElement;
+    this.cx = this.canvasEl.getContext("2d");
 
     let cx = this.cx;
 
     // set the width and height
-    canvasEl.width = this.width;
-    canvasEl.height = this.height;
+    this.canvasEl.width = this.width;
+    this.canvasEl.height = this.height;
 
     // set some default properties about the line
     this.cx.lineWidth = 3;
@@ -52,11 +54,11 @@ export class SecondSceneComponent implements AfterViewInit {
     let img = new Image();
     img.src = url;
     img.onload = () => {
-      cx.drawImage(img, 0, 0, canvasEl.width, canvasEl.height);
+      cx.drawImage(img, 0, 0, this.canvasEl.width, this.canvasEl.height);
     };
 
     // we'll implement this method to start capturing mouse events
-    this.captureEvents(canvasEl);
+    this.captureEvents(this.canvasEl);
   }
 
   private captureEvents(canvasEl: HTMLCanvasElement) {
@@ -100,7 +102,12 @@ export class SecondSceneComponent implements AfterViewInit {
     prevPos: { x: number; y: number },
     currentPos: { x: number; y: number }
   ) {
-    let rect = new MyRect(820, 591, 130, 130);
+    let rect = new MyRect(
+      this.canvasEl.width / 2 + this.canvasEl.width / 9,
+      this.canvasEl.height - 150,
+      this.canvasEl.width / 9,
+      150
+    );
 
     // incase the context is not set
     if (!this.cx) {
@@ -134,6 +141,7 @@ export class SecondSceneComponent implements AfterViewInit {
 
       if (rect.contains(currentPos.x, currentPos.y)) {
         this.onDiscoverPath.emit();
+        this.canvas.nativeElement.classList.add("slow-hide");
       }
     }
   }
