@@ -15,7 +15,7 @@
   padding: 0.5em 1.4em;
   text-decoration: none;
   background: #668ad8;
-  color: #FFF;
+  color: #FFF!important;
   border-bottom: solid 5px #36528c;
   border-right: solid 5px #5375bd;
   margin: 24px 0px;
@@ -31,7 +31,7 @@
   border-width: 0 6px 6px 0px;
   border-style: solid;
   border-color: transparent;
-  border-bottom-color: #FFF;
+  border-bottom-color: #FFF!important;
 }
 
 .square_btn:after{
@@ -43,7 +43,7 @@
   height: 0;
   border-width: 0px 6px 6px 0px;
   border-style: solid;
-  border-color: #FFF;
+  border-color: #FFF!important;
   border-bottom-color: transparent;
 }
 

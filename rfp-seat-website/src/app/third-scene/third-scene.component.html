@@ -1,26 +1,26 @@
 <div id="third-container" class="container-fluid px-0">
 
   <div class="row mx-0">
+    <div class="col-4 px-0" style="text-align: center;">
+      <a (click)="selectOption(1)" class="square_btn">1</a>
+    </div>
+    <div class="col-4 px-0" style="text-align: center;">
+      <a (click)="selectOption(2)" class="square_btn">2</a>
+    </div>
+    <div class="col-4 px-0" style="text-align: center;">
+      <a (click)="selectOption(3)" class="square_btn">3</a>
+    </div>
+  </div>
+  <div class="row mx-0">
     <div class="col-12 px-0">
-      <img src="../../assets/seat_3.jpg" class="img-fluid w-100">
+      <img src="../../assets/seat_3_1.jpg" class="img-fluid w-100">
+      <img src="../../assets/road_1.png" (load)="fadeIn();" class="img-fluid w-100 floating-img animate__animated animate__faster">
     </div>
   </div>
 
   <div class="row mx-0">
-    <div class="col-4 px-0" style="text-align: center;">
-      <a (click)="selectOption(1)" class="square_btn">ROAD 1</a>
-    </div>
-    <div class="col-4 px-0" style="text-align: center;">
-      <a (click)="selectOption(2)" class="square_btn">ROAD 2</a>
-    </div>
-    <div class="col-4 px-0" style="text-align: center;">
-      <a (click)="selectOption(3)" class="square_btn">ROAD 3</a>
-    </div>
-  </div>
-  <div class="row mx-0">
     <div class="col-12 px-0">
-      <img src="../../assets/road_background.jpg" class="img-fluid w-100">
-      <img src="../../assets/road_1.png" (load)="fadeIn();" class="img-fluid w-100 floating-img animate__animated animate__faster">
+      <img src="../../assets/seat_3_2.jpg" class="img-fluid w-100">
     </div>
   </div>
 
