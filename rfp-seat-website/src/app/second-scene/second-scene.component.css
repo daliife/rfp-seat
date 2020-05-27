@@ -1,6 +1,6 @@
 #box {
   display: inline-block;
-  background: url("../../assets/seat_2_2.jpg");
+  background: url("./../../assets/seat_2_2.jpg");
   background-size: cover;
   width: 100%;
   height: auto;

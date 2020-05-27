@@ -9,8 +9,10 @@
 <app-second-scene (onDiscoverPath)="discoverPath()"></app-second-scene>
 
 <div *ngIf="discoveringPathSuccess">
+  <!--<app-third-scene (onDrop)="dropSuccess()"></app-third-scene>-->
   <app-third-scene></app-third-scene>
-
+</div>
+<div *ngIf="dragAndDropSuccess">
   <app-closing-scene></app-closing-scene>
 
   <router-outlet></router-outlet>

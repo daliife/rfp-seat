@@ -1,0 +1,14 @@
+#box {
+  display: inline-block;
+  background: url("./../../assets/seat_3_2.jpg");
+  background-size: cover;
+  width: 100%;
+  height: auto;
+}
+
+canvas {
+  background: transparent;
+  width: inherit;
+  opacity: 1;
+  visibility: visible;
+}
