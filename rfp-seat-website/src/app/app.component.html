@@ -6,10 +6,12 @@
 
 <app-first-scene></app-first-scene>
 
-<app-second-scene></app-second-scene>
+<app-second-scene (onDiscoverPath)="discoverPath()"></app-second-scene>
 
-<app-third-scene></app-third-scene>
+<div *ngIf="discoveringPathSuccess">
+  <app-third-scene></app-third-scene>
 
-<app-closing-scene></app-closing-scene>
+  <app-closing-scene></app-closing-scene>
 
-<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
+</div>
