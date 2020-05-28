@@ -19,12 +19,12 @@ canvas.slow-hide {
 }
 
 #needle{
-  transform-origin: top center;
+  transform-origin: center;
   transition: 0.2s;
-  top: 46%;
+  top: 0;
   left: 44%;
   position: absolute;
-  height: 50%;
+  height: 100%;
   z-index: 5;
 }
 
