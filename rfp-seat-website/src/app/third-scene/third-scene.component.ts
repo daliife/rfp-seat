@@ -1,12 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit } from "@angular/core";
 @Component({
-  selector: 'app-third-scene',
-  templateUrl: './third-scene.component.html',
-  styleUrls: ['./third-scene.component.css']
+  selector: "app-third-scene",
+  templateUrl: "./third-scene.component.html",
+  styleUrls: ["./third-scene.component.css"],
 })
 export class ThirdSceneComponent implements OnInit {
-
   flag = false;
 
   currentImage = 0;
@@ -42,5 +40,4 @@ export class ThirdSceneComponent implements OnInit {
       element.classList.add('animate__fadeIn');
     }
   }
-
 }
