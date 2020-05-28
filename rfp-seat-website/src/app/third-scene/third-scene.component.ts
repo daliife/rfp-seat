@@ -10,7 +10,8 @@ import {
 import { fromEvent } from "rxjs";
 import { switchMap, takeUntil, pairwise } from "rxjs/operators";
 
-import { MyRect } from "./rectangle.component";
+import { DropZone } from "./dropZone.component";
+import { DragObject } from "./dragObject.component";
 
 @Component({
   selector: "app-third-scene",
@@ -29,8 +30,10 @@ export class ThirdSceneComponent implements AfterViewInit {
   private canvasEl: HTMLCanvasElement;
 
   private cx: CanvasRenderingContext2D;
-  private rectangles: MyRect[] = [];
-  private rect: MyRect;
+  private dropZones: DropZone[] = [];
+  private dragObjects: DragObject[] = [];
+  private isDragging: boolean = false;
+  private position: { x: number; y: number };
 
   public ngAfterViewInit() {
     this.width = document.getElementById("canvas").offsetWidth;
@@ -50,114 +53,155 @@ export class ThirdSceneComponent implements AfterViewInit {
     this.cx.lineCap = "round";
     this.cx.strokeStyle = "#000";
 
-    let rect = new MyRect(
-      0,
-      0,
-      this.canvasEl.width / 2 + this.canvasEl.width / 9,
-      this.canvasEl.height / 7
-    );
+    let rect = new DropZone(this.canvasEl.width / 2, 0, 50, 50);
 
-    let rect1 = new MyRect(
-      0,
-      this.canvasEl.height / 7,
-      this.canvasEl.width / 5,
-      this.canvasEl.height
-    );
+    let rect1 = new DropZone(this.canvasEl.width / 2 + 100, 0, 50, 50);
 
-    let rect2 = new MyRect(
-      this.canvasEl.width / 5,
-      this.canvasEl.height / 2 + this.canvasEl.height / 4.5,
-      this.canvasEl.width / 3 + this.canvasEl.width / 6.5,
-      this.canvasEl.height
-    );
+    let rect2 = new DropZone(this.canvasEl.width / 2 + 200, 0, 50, 50);
 
-    let rect3 = new MyRect(
-      this.canvasEl.width / 2 + this.canvasEl.width / 5,
-      0,
-      this.canvasEl.width,
-      this.canvasEl.height / 2 + this.canvasEl.height / 9
-    );
+    let rect3 = new DropZone(this.canvasEl.width / 2 + 300, 0, 50, 50);
 
-    let rect4 = new MyRect(
-      this.canvasEl.width / 3.8,
-      this.canvasEl.height / 3.6,
-      this.canvasEl.width / 2.29,
-      this.canvasEl.height / 3
-    );
+    this.dropZones.push(rect);
+    this.dropZones.push(rect1);
+    this.dropZones.push(rect2);
+    this.dropZones.push(rect3);
 
-    let rect5 = new MyRect(
-      this.canvasEl.width / 2 + this.canvasEl.width / 4,
-      this.canvasEl.height / 2 + this.canvasEl.height / 8.99,
-      this.canvasEl.width,
-      this.canvasEl.height
-    );
+    let drag1 = new DragObject(0, 0, 50, 50);
+    let drag2 = new DragObject(100, 0, 50, 50);
+    let drag3 = new DragObject(200, 0, 50, 50);
+    let drag4 = new DragObject(300, 0, 50, 50);
 
-    this.rectangles.push(rect);
-    this.rectangles.push(rect1);
-    this.rectangles.push(rect2);
-    this.rectangles.push(rect3);
-    this.rectangles.push(rect4);
-    this.rectangles.push(rect5);
+    this.dragObjects.push(drag1);
+    this.dragObjects.push(drag2);
+    this.dragObjects.push(drag3);
+    this.dragObjects.push(drag4);
 
-    for (let i = 0; i < this.rectangles.length; i++) {
-      this.cx.fillRect(
-        this.rectangles[i].getCoordinates().x,
-        this.rectangles[i].getCoordinates().y,
-        this.rectangles[i].getWidthAndHeight().width,
-        this.rectangles[i].getWidthAndHeight().height
-      );
-    }
+    this.draw();
 
     // we'll implement this method to start capturing mouse events
     this.captureEvents(this.canvasEl);
   }
 
-  private captureEvents(canvasEl: HTMLCanvasElement) {
-    // this will capture all mousedown events from the canvas element
-    fromEvent(canvasEl, "mousedown")
-      .pipe(
-        switchMap((e) => {
-          // after a mouse down, we'll record all mouse moves
-          return fromEvent(canvasEl, "mousemove").pipe(
-            // we'll stop (and unsubscribe) once the user releases the mouse
-            // this will trigger a 'mouseup' event
-            takeUntil(fromEvent(canvasEl, "mouseup")),
-            // we'll also stop (and unsubscribe) once the mouse leaves the canvas (mouseleave event)
-            takeUntil(fromEvent(canvasEl, "mouseleave")),
-            // pairwise lets us get the previous value to draw a line from
-            // the previous point to the current point
-            pairwise()
-          );
-        })
-      )
-      .subscribe((res: [MouseEvent, MouseEvent]) => {
-        const rect = canvasEl.getBoundingClientRect();
+  private draw() {
+    this.cx.clearRect(0, 0, this.canvasEl.width, this.canvasEl.height);
 
-        // previous and current position with the offset
-        const prevPos = {
-          x: res[0].clientX - rect.left,
-          y: res[0].clientY - rect.top,
-        };
-
-        const currentPos = {
-          x: res[1].clientX - rect.left,
-          y: res[1].clientY - rect.top,
-        };
-
-        // this method we'll implement soon to do the actual drawing
-        this.drawOnCanvas(prevPos, currentPos);
-      });
+    for (let i = 0; i < this.dropZones.length; i++) {
+      this.cx.fillStyle = "#000";
+      this.cx.fillRect(
+        this.dropZones[i].getCoordinates().x,
+        this.dropZones[i].getCoordinates().y,
+        this.dropZones[i].getWidthAndHeight().width,
+        this.dropZones[i].getWidthAndHeight().height
+      );
+    }
+    for (let i = 0; i < this.dragObjects.length; i++) {
+      this.cx.fillStyle = "#f00";
+      this.cx.fillRect(
+        this.dragObjects[i].getCoordinates().x,
+        this.dragObjects[i].getCoordinates().y,
+        this.dragObjects[i].getWidthAndHeight().width,
+        this.dragObjects[i].getWidthAndHeight().height
+      );
+    }
   }
 
-  private drawOnCanvas(
-    prevPos: { x: number; y: number },
-    currentPos: { x: number; y: number }
-  ) {
+  private captureEvents(canvasEl: HTMLCanvasElement) {
+    // this will capture all mousedown events from the canvas element
+    // listen for mouse events
+    this.canvasEl.onmousedown = this.myDown.bind(this);
+    this.canvasEl.onmouseup = this.myUp.bind(this);
+    this.canvasEl.onmousemove = this.myMove.bind(this);
+  }
+
+  private myDown(e) {
     // incase the context is not set
+    e.preventDefault();
+    e.stopPropagation();
+
     if (!this.cx) {
       return;
     }
 
-    if (this.rect.contains(currentPos.x, currentPos.y)) console.log("inside");
+    const rect = this.canvasEl.getBoundingClientRect();
+    let currentPos = {
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    };
+
+    this.isDragging = false;
+    for (let i = 0; i < this.dragObjects.length; i++) {
+      if (this.dragObjects[i].isDropped()) continue;
+      if (this.dragObjects[i].contains(currentPos.x, currentPos.y)) {
+        this.isDragging = true;
+        this.dragObjects[i].drag();
+      }
+    }
+    this.position = currentPos;
+
+    //if (this.rect.contains(currentPos.x, currentPos.y)) console.log("inside");
+  }
+
+  private myUp(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    // clear all the dragging flags
+
+    for (let i = 0; i < this.dropZones.length; i++) {
+      if (this.dropZones[i].isFull()) continue;
+      if (this.dropZones[i].contains(this.position.x, this.position.y)) {
+        this.dropZones[i].fill();
+        for (let i = 0; i < this.dragObjects.length; i++) {
+          if (this.dragObjects[i].isDragging()) {
+            this.dragObjects[i].drop();
+            console.log(this.dragObjects[i].isDropped());
+          }
+        }
+      }
+    }
+    this.isDragging = false;
+    for (let i = 0; i < this.dragObjects.length; i++) {
+      this.dragObjects[i].stopDragging();
+    }
+  }
+
+  private myMove(e) {
+    // if we're dragging anything...
+    if (this.isDragging) {
+      // tell the browser we're handling this mouse event
+      e.preventDefault();
+      e.stopPropagation();
+
+      // get the current mouse position
+      const rect = this.canvasEl.getBoundingClientRect();
+      let currentPos = {
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top,
+      };
+
+      // calculate the distance the mouse has moved
+      // since the last mousemove
+      let dx = currentPos.x - this.position.x;
+      let dy = currentPos.y - this.position.y;
+
+      // move each rect that isDragging
+      // by the distance the mouse has moved
+      // since the last mousemove
+      for (let i = 0; i < this.dragObjects.length; i++) {
+        let r = this.dragObjects[i];
+        if (r.isDragging()) {
+          r.setCoordinates(
+            r.getCoordinates().x + dx,
+            r.getCoordinates().y + dy
+          );
+        }
+      }
+
+      // redraw the scene with the new rect positions
+      this.draw();
+
+      // reset the starting mouse position for the next mousemove
+      this.position = currentPos;
+    }
   }
 }
