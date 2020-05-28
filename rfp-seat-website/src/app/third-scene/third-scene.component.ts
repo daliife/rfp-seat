@@ -34,6 +34,7 @@ export class ThirdSceneComponent implements AfterViewInit {
   private dragObjects: DragObject[] = [];
   private isDragging: boolean = false;
   private position: { x: number; y: number };
+  private loop;
 
   public ngAfterViewInit() {
     this.width = document.getElementById("canvas").offsetWidth;
@@ -151,10 +152,10 @@ export class ThirdSceneComponent implements AfterViewInit {
       if (this.dropZones[i].isFull()) continue;
       if (this.dropZones[i].contains(this.position.x, this.position.y)) {
         this.dropZones[i].fill();
-        for (let i = 0; i < this.dragObjects.length; i++) {
-          if (this.dragObjects[i].isDragging()) {
-            this.dragObjects[i].drop();
-            console.log(this.dragObjects[i].isDropped());
+        for (let j = 0; j < this.dragObjects.length; j++) {
+          if (this.dragObjects[j].isDragging()) {
+            this.dragObjects[j].drop();
+            this.drop(this.dragObjects[j], this.dropZones[i]);
           }
         }
       }
@@ -202,6 +203,76 @@ export class ThirdSceneComponent implements AfterViewInit {
 
       // reset the starting mouse position for the next mousemove
       this.position = currentPos;
+    }
+  }
+
+  drop(draggedObject, dropZone) {
+    console.log(draggedObject.isDropped());
+    draggedObject.setCoordinates(
+      dropZone.getCoordinates().x,
+      dropZone.getCoordinates().y
+    );
+    this.draw();
+    //this.animate(draggedObject, dropZone);
+  }
+
+  animate(draggedObject, dropZone) {
+    if (
+      !draggedObject.getCoordinates().x == dropZone.getCoordinates().x ||
+      !draggedObject.getCoordinates().y == dropZone.getCoordinates().y
+    ) {
+      let mx = dropZone.getCoordinates().x - draggedObject.getCoordinates().x;
+      let my = dropZone.getCoordinates().y - draggedObject.getCoordinates().y;
+      console.log(mx, my);
+      if (mx < 0 && my < 0) {
+        draggedObject.setCoordinates(
+          draggedObject.getCoordinates().x + mx / -mx,
+          draggedObject.getCoordinates().y + my / -my
+        );
+      } else if (mx > 0 && my < 0) {
+        draggedObject.setCoordinates(
+          draggedObject.getCoordinates().x + mx / mx,
+          draggedObject.getCoordinates().y + my / -my
+        );
+      } else if (mx < 0 && my > 0) {
+        draggedObject.setCoordinates(
+          draggedObject.getCoordinates().x + mx / -mx,
+          draggedObject.getCoordinates().y + my / my
+        );
+      } else if (mx > 0 && my > 0) {
+        draggedObject.setCoordinates(
+          draggedObject.getCoordinates().x + mx / mx,
+          draggedObject.getCoordinates().y + my / my
+        );
+      } else if (mx == 0 && my < 0) {
+        draggedObject.setCoordinates(
+          draggedObject.getCoordinates().x,
+          draggedObject.getCoordinates().y + my / -my
+        );
+      } else if (mx == 0 && my > 0) {
+        draggedObject.setCoordinates(
+          draggedObject.getCoordinates().x,
+          draggedObject.getCoordinates().y + my / my
+        );
+      } else if (mx < 0 && my == 0) {
+        draggedObject.setCoordinates(
+          draggedObject.getCoordinates().x + mx / -mx,
+          draggedObject.getCoordinates().y
+        );
+      } else if (mx > 0 && my == 0) {
+        draggedObject.setCoordinates(
+          draggedObject.getCoordinates().x + mx / mx,
+          draggedObject.getCoordinates().y
+        );
+      }
+
+      this.draw();
+
+      this.loop = requestAnimationFrame(
+        this.animate.bind(this)(draggedObject, dropZone)
+      );
+    } else {
+      cancelAnimationFrame(this.loop);
     }
   }
 }
