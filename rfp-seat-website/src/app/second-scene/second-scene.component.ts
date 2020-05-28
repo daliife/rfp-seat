@@ -58,8 +58,11 @@ export class SecondSceneComponent implements AfterViewInit {
     this.cx.lineCap = 'round';
     this.cx.strokeStyle = '#000';
 
+    const url2 =
+    'https://cloud.githubusercontent.com/assets/4652816/12771961/5341c3c4-ca68-11e5-844c-f659831d9c00.jpg';
+
     const url =
-      'https://cloud.githubusercontent.com/assets/4652816/12771961/5341c3c4-ca68-11e5-844c-f659831d9c00.jpg';
+      '../../assets/forest_paint.jpg';
 
     const img = new Image();
     img.src = url;
