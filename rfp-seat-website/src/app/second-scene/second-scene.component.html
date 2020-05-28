@@ -1,21 +1,15 @@
-
-
-
 <div id="home-container" class="container-fluid px-0">
   <div class="row mx-0">
     <div class="col-12 px-0">
       <img src="../../assets/second-scene.svg" class="img-fluid w-100" />
-      <div id="box">
-        <canvas #canvas id="canvas" (mousedown)="mousedown();" (mouseup)="mouseup();"></canvas>
-      </div>
       <div id="speed-box">
         <img id="needle" src="../../assets/needle_2.png">
         <img id="numbers" src="../../assets/numbers.png">
+        <!-- <img id="speedometer" src="../../assets/speedometer/Attack__000.png"> -->
       </div>
-      <!-- <img id="speedometer" src="../../assets/speedometer/Attack__000.png"> -->
+      <div id="box">
+        <canvas #canvas id="canvas" (mousedown)="mousedown();" (mouseup)="mouseup();"></canvas>
+      </div>
     </div>
   </div>
 </div>
-
-<p>frame {{currentFrame}}</p>
-

@@ -18,18 +18,8 @@
   font-size: 18px;
 }
 
-/* .flex-icons{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 100%;
-  text-align: center;
-  align-items: center;
-} */
-
 #navigation-bar{
-  height:100px;
+  height: 110px;
   padding: 0px!important;
 }
 
