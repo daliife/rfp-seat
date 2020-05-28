@@ -14,7 +14,7 @@ export class ThirdSceneComponent implements OnInit {
   ngOnInit(): void {}
 
   selectOption(option: number) {
-    const newPath = '../../assets/road_' + option + '.png';
+    const newPath = '../../assets/roads_' + option + '.png';
     const element = document.querySelector('.floating-img');
     if (!this.flag) {
       $('.floating-img').attr('src', newPath);
@@ -31,7 +31,7 @@ export class ThirdSceneComponent implements OnInit {
   }
 
   fadeIn() {
-    if(this.flag) {
+    if (this.flag) {
       const element = document.querySelector('.floating-img');
       element.classList.add('animate__fadeIn');
     }
