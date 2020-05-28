@@ -1,3 +1,6 @@
 .logo{
   margin: 0px 24px;
 }
+.justify-end{
+  justify-content: flex-end;
+}

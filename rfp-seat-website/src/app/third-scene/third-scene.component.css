@@ -1,14 +1,61 @@
-#box {
-  display: inline-block;
-  background: url("./../../assets/seat_3_2.jpg");
-  background-size: cover;
-  width: 100%;
-  height: auto;
+.floating-img {
+  position: absolute;
+  float: left;
+  left: 0;
+  top: 0;
+  height: 100%;
+  opacity: 0%;
 }
 
-canvas {
-  background: transparent;
-  width: inherit;
-  opacity: 1;
-  visibility: visible;
+/* DEMO BUTTON CSS */
+.square_btn {
+  display: inline-block;
+  position: relative;
+  padding: 0.5em 1.4em;
+  text-decoration: none;
+  background: #668ad8;
+  color: #fff;
+  border-bottom: solid 5px #36528c;
+  border-right: solid 5px #5375bd;
+  margin: 24px 0px;
+}
+
+.square_btn:before {
+  content: " ";
+  position: absolute;
+  bottom: -5px;
+  left: -1px;
+  width: 0;
+  height: 0;
+  border-width: 0 6px 6px 0px;
+  border-style: solid;
+  border-color: transparent;
+  border-bottom-color: #fff;
+}
+
+.square_btn:after {
+  content: " ";
+  position: absolute;
+  top: -1px;
+  right: -5px;
+  width: 0;
+  height: 0;
+  border-width: 0px 6px 6px 0px;
+  border-style: solid;
+  border-color: #fff;
+  border-bottom-color: transparent;
+}
+
+.square_btn:active {
+  /*on click*/
+  border: none;
+  -ms-transform: translate(6px, 6px);
+  -webkit-transform: translate(6px, 6px);
+  transform: translate(6px, 6px); /*move LowerRight*/
+}
+
+.square_btn:active:after,
+.square_btn:active:before {
+  /*on click*/
+  content: none; /*Border disappears*/
 }
