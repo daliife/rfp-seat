@@ -6,8 +6,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'rfp-seat-website';
-  @Input() discoveringPathSuccess = true;
+  title = "rfp-seat-website";
+  @Input() discoveringPathSuccess: boolean = true;
+  @Input() dragAndDropSuccess: boolean = false;
 
   discoverPath() {
     this.discoveringPathSuccess = true;

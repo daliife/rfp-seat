@@ -4,13 +4,16 @@
 
 <app-start-scene></app-start-scene>
 
-<app-video-wrapper youtubeUrl="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"></app-video-wrapper>
+<app-video-wrapper
+  youtubeUrl="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"
+></app-video-wrapper>
 
 <app-first-scene></app-first-scene>
 
 <app-second-scene (onDiscoverPath)="discoverPath()"></app-second-scene>
 
 <div *ngIf="discoveringPathSuccess">
+  <!--<app-third-scene (onDrop)="dropSuccess()"></app-third-scene>-->
   <app-third-scene></app-third-scene>
   <app-closing-scene></app-closing-scene>
   <app-navbar></app-navbar>
