@@ -1,12 +1,10 @@
 <app-car-scroller></app-car-scroller>
 
-<app-navbar></app-navbar>
-
 <app-home></app-home>
 
-<!-- <app-video-wrapper
-youtubeUrl="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"
-></app-video-wrapper> -->
+<app-start-scene></app-start-scene>
+
+<app-video-wrapper youtubeUrl="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"></app-video-wrapper>
 
 <app-first-scene></app-first-scene>
 
@@ -14,8 +12,8 @@ youtubeUrl="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"
 
 <div *ngIf="discoveringPathSuccess">
   <app-third-scene></app-third-scene>
-
   <app-closing-scene></app-closing-scene>
-
-  <router-outlet></router-outlet>
+  <app-navbar></app-navbar>
 </div>
+
+<router-outlet></router-outlet>

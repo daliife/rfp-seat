@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ContentPlaceholderComponent } from './content-placeholder.component';
+import { StartSceneComponent } from './start-scene.component';
 
-describe('ContentPlaceholderComponent', () => {
-  let component: ContentPlaceholderComponent;
-  let fixture: ComponentFixture<ContentPlaceholderComponent>;
+describe('StartSceneComponent', () => {
+  let component: StartSceneComponent;
+  let fixture: ComponentFixture<StartSceneComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContentPlaceholderComponent ]
+      declarations: [ StartSceneComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ContentPlaceholderComponent);
+    fixture = TestBed.createComponent(StartSceneComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
