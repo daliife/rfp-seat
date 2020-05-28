@@ -17,3 +17,25 @@ canvas.slow-hide {
   opacity: 0;
   transition: opacity 1s;
 }
+
+#needle{
+  transform-origin: top center;
+  transition: 0.2s;
+  top: 46%;
+  left: 44%;
+  position: absolute;
+  height: 50%;
+  z-index: 5;
+}
+
+#numbers{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#speed-box{
+  width: 200px;
+  height: 200px;
+  position: relative;
+}

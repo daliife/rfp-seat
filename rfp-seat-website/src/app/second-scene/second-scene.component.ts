@@ -34,6 +34,8 @@ export class SecondSceneComponent implements AfterViewInit {
 
   timeoutHandler;
 
+  deltaFrame = 5;
+
   private canvasEl: HTMLCanvasElement;
 
   private cx: CanvasRenderingContext2D;
@@ -158,9 +160,10 @@ export class SecondSceneComponent implements AfterViewInit {
     if (this.timeoutHandler) {
       clearInterval(this.timeoutHandler);
       this.timeoutHandler = setInterval(() => {
-        if (this.currentFrame > 0) { this.currentFrame --; }
+        if (this.currentFrame - this.deltaFrame >= 0) { this.currentFrame = this.currentFrame - this.deltaFrame; }
         const newPath = '../../assets/speedometer/Attack__00' + Math.floor(this.currentFrame / 10) + '.png';
         $('#speedometer').attr('src', newPath);
+        this.rotate(this.currentFrame * 2.7);
       }, this.updateInterval);
     }
   }
@@ -168,10 +171,21 @@ export class SecondSceneComponent implements AfterViewInit {
   mousedown() {
     clearInterval(this.timeoutHandler);
     this.timeoutHandler = setInterval(() => {
-      if (this.currentFrame < 100) { this.currentFrame ++; }
+      if (this.currentFrame + this.deltaFrame < 100) { this.currentFrame = this.currentFrame + this.deltaFrame; }
       const newPath = '../../assets/speedometer/Attack__00' + Math.floor(this.currentFrame / 10) + '.png';
       $('#speedometer').attr('src', newPath);
+      this.rotate(this.currentFrame * 2.7);
     }, this.updateInterval);
   }
 
+  private rotate(degrees) {
+    $('#needle').css(
+      {
+      '-webkit-transform' : 'rotate(' + degrees + 'deg)',
+        '-moz-transform' : 'rotate(' + degrees + 'deg)',
+          '-ms-transform' : 'rotate(' + degrees + 'deg)',
+          '-o-transform' : 'rotate(' + degrees + 'deg)',
+              'transform' : 'rotate(' + degrees + 'deg)'
+      });
+  }
 }

@@ -1,6 +1,5 @@
 
-<p>frame {{currentFrame}}</p>
-<img id="speedometer" src="../../assets/speedometer/Attack__000.png">
+
 
 <div id="home-container" class="container-fluid px-0">
   <div class="row mx-0">
@@ -9,6 +8,16 @@
       <div id="box">
         <canvas #canvas id="canvas" (mousedown)="mousedown();" (mouseup)="mouseup();"></canvas>
       </div>
+      <div id="speed-box">
+        <img id="needle" src="../../assets/needle.png">
+        <img id="numbers" src="../../assets/numbers.png">
+      </div>
+      <img id="speedometer" src="../../assets/speedometer/Attack__000.png">
+
+
     </div>
   </div>
 </div>
+
+<p>frame {{currentFrame}}</p>
+
