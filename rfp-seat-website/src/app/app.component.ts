@@ -7,10 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class AppComponent {
   title = "rfp-seat-website";
-  @Input() discoveringPathSuccess: boolean;
-  @Input() dragAndDropSuccess: boolean = false;
-
   @Input() discoveringPathSuccess: boolean = true;
+  @Input() dragAndDropSuccess: boolean = false;
 
   discoverPath() {
     this.discoveringPathSuccess = true;
