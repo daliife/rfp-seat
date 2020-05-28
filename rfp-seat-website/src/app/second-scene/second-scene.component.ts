@@ -23,11 +23,14 @@ export class SecondSceneComponent implements AfterViewInit {
 
   // setting a width and height for the canvas
   @Input() public width;
+
   @Input() public height;
+
   @Output() onDiscoverPath: EventEmitter<any> = new EventEmitter();
 
   currentFrame = 0;
 
+  updateInterval = 100; // in ms
 
   timeoutHandler;
 
@@ -156,7 +159,9 @@ export class SecondSceneComponent implements AfterViewInit {
       clearInterval(this.timeoutHandler);
       this.timeoutHandler = setInterval(() => {
         if (this.currentFrame > 0) { this.currentFrame --; }
-      }, 50);
+        const newPath = '../../assets/speedometer/Attack__00' + Math.floor(this.currentFrame / 10) + '.png';
+        $('#speedometer').attr('src', newPath);
+      }, this.updateInterval);
     }
   }
 
@@ -164,7 +169,9 @@ export class SecondSceneComponent implements AfterViewInit {
     clearInterval(this.timeoutHandler);
     this.timeoutHandler = setInterval(() => {
       if (this.currentFrame < 100) { this.currentFrame ++; }
-    }, 50);
+      const newPath = '../../assets/speedometer/Attack__00' + Math.floor(this.currentFrame / 10) + '.png';
+      $('#speedometer').attr('src', newPath);
+    }, this.updateInterval);
   }
 
 }
