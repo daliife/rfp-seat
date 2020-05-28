@@ -13,7 +13,37 @@
 }
 
 
+/* BUTTONS */
+.title-download{
+  margin-bottom: 40px;
+}
 
+.download-button {
+  border-radius: 4px;
+  background-color: #ea5d1a;
+  margin-right: 40px;
+  color: #ffffff;
+}
+.contact-button {
+  border-radius: 4px;
+  border: solid 1px #ea5d1a;
+  color: #ea5d1a;
+}
+
+.text-buttons{
+  padding: 12px 35px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  font-size: 18px;
+  font-family: SeatBcn-Regular;
+}
+
+
+/* FLOATING BUTTON CSS */
 
 .avatar {
 	width: 50px;
