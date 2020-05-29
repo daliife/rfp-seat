@@ -12,10 +12,15 @@
   margin: 30px;
 }
 
+.add-inferior-space{
+  margin-bottom: 40px;
+}
+
 
 /* BUTTONS */
 .title-download{
   margin-bottom: 40px;
+  margin-top: 80px;
 }
 
 .download-button {
