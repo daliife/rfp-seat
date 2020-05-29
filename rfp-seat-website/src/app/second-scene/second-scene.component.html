@@ -3,12 +3,20 @@
     <div class="col-12 px-0">
       <img src="../../assets/second-scene.svg" class="img-fluid w-100" />
       <div id="speed-box">
-        <img id="needle" src="../../assets/needle_2.png">
-        <img id="numbers" src="../../assets/numbers.png">
-        <!-- <img id="speedometer" src="../../assets/speedometer/Attack__000.png"> -->
+        <!--
+        <img id="needle" src="../../assets/needle_2.png" />
+        <img id="numbers" src="../../assets/numbers.png" /> -->
       </div>
+
       <div id="box">
-        <canvas #canvas id="canvas" (mousedown)="mousedown();" (mouseup)="mouseup();"></canvas>
+        <img id="speedometer" src="../../assets/speedometer/Attack__000.png" />
+        <canvas
+          #canvas
+          id="canvas"
+          (mousedown)="mousedown()"
+          (mouseup)="mouseup()"
+          (mousemove)="mousemove($event)"
+        ></canvas>
       </div>
     </div>
   </div>

@@ -4,6 +4,7 @@
   background-size: cover;
   width: 100%;
   height: auto;
+  position: relative;
 }
 
 canvas {
@@ -18,7 +19,7 @@ canvas.slow-hide {
   transition: opacity 1s;
 }
 
-#needle{
+#needle {
   transform-origin: center;
   transition: 0.2s;
   top: 0;
@@ -28,14 +29,19 @@ canvas.slow-hide {
   z-index: 5;
 }
 
-#numbers{
+#numbers {
   position: absolute;
-  width: 100%;
   height: 100%;
 }
 
-#speed-box{
-  width: 200px;
+#speedometer {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  pointer-events: none;
+}
+
+#speed-box {
   height: 200px;
   position: relative;
   margin: 20px auto;
