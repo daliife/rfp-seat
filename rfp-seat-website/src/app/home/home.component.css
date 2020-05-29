@@ -6,31 +6,47 @@
 }
 
 .parallax-layer{
-  height: 100%;
+  height: 900px;
   width: 100%;
   align-items: center;
 }
 
-.background{
-  background: url(../../assets/road.jpg) no-repeat 50% 100%;
+.layer{
   background-repeat: no-repeat;
   height: 100%;
 }
 
-.lighthouse{
-  background-image: url(../../assets/car_1.png);
-  background-repeat: no-repeat;
-  height: 100%;
-}
+.background{ background: url(../../assets/parallax/background.svg) no-repeat 0% 100%; }
+.mountains-1 { background: url(../../assets/parallax/mounatins-1.svg) no-repeat 0% 100%; }
+.mountains-2 { background: url(../../assets/parallax/mountains-2.svg) no-repeat 0% 100%; }
+.car { background: url(../../assets/parallax/car.svg) no-repeat 0% 100%; }
+.grass { background: url(../../assets/parallax/grass.svg) no-repeat 0% 100%; }
 
-.forest{
-  background-image: url(../../assets/forest.png);
-  background-repeat: no-repeat;
-  height: 100%;
-}
+
 
 .title-parallax{
-  color: white;
+  color: #0f0f0f;
   text-align: center;
-  font-size: 100px;
+  font-size: 68px;
+
+}
+
+.subtitle-parallax{
+  color: #0f0f0f;
+  text-align: center;
+  font-size: 25px;
+  font-family: SeatBcn-Regular;
+  margin: 40px 0px;
+}
+
+.logo-parallax{
+  text-align: center;
+}
+
+.logo-home{
+  margin: 0px 20px;
+}
+
+#text-home-layer{
+  top: 20%!important;
 }
