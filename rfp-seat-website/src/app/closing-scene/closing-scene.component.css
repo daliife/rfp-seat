@@ -15,6 +15,34 @@
   margin-bottom: 40px;
 }
 
+.floating-buttons-selection {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+.relative-row{
+  position: relative;
+}
+
+#download-button{
+  left: 12%;
+  top: 46%;
+  position: inherit;
+}
+
+#email-button{
+  left: 44%;
+  top: 22%;
+  position: inherit;
+}
+
+#video-button{
+  left: 77%;
+  top: 68%;
+  position: inherit;
+}
 
 /* BUTTONS */
 .title-download{
@@ -44,14 +72,12 @@
   font-family: "SeatBcn-Regular";
 }
 
-
 /* FLOATING BUTTON CSS */
-
-.avatar {
-	width: 50px;
+.floating-button {
+	/* width: 50px;
 	height: 50px;
-	box-sizing: border-box;
-	border-radius: 50%;
+	border-radius: 50%; */
+  box-sizing: border-box;
 	overflow: hidden;
 	box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
 	transform: translatey(0px);
