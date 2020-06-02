@@ -36,6 +36,8 @@ export class SecondSceneComponent implements AfterViewInit {
 
   deltaFrame = 5;
 
+  showingSpeedometer = true;
+
   private canvasEl: HTMLCanvasElement;
 
   private cx: CanvasRenderingContext2D;
@@ -145,6 +147,8 @@ export class SecondSceneComponent implements AfterViewInit {
       if (rect.contains(currentPos.x, currentPos.y)) {
         this.onDiscoverPath.emit();
         this.canvas.nativeElement.classList.add('slow-hide');
+        $('#speedometer').addClass('slow-hide');
+        this.showingSpeedometer = false;
       }
     }
   }
@@ -180,12 +184,14 @@ export class SecondSceneComponent implements AfterViewInit {
   }
 
   mousemove(e) {
-    const x = e.clientX - this.canvasEl.getBoundingClientRect().left;
-    const y = e.clientY - this.canvasEl.getBoundingClientRect().top;
-    $('#speedometer').css(
-    {
-      left: x + 25,
-      top: y,
-    });
+    if (this.showingSpeedometer) {
+      const x = e.clientX - this.canvasEl.getBoundingClientRect().left;
+      const y = e.clientY - this.canvasEl.getBoundingClientRect().top;
+      $('#speedometer').css(
+      {
+        left: x + 25,
+        top: y,
+      });
+    }
   }
 }
