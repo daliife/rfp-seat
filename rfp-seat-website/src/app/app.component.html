@@ -1,21 +1,25 @@
-<app-car-scroller></app-car-scroller>
+<!-- <div class="animate__animated animate__fadeIn animate__slow"> -->
 
-<app-home></app-home>
+  <app-car-scroller></app-car-scroller>
 
-<app-start-scene></app-start-scene>
+  <app-home></app-home>
 
-<app-video-wrapper
-  youtubeUrl="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"
-></app-video-wrapper>
+  <app-start-scene></app-start-scene>
 
-<app-first-scene></app-first-scene>
+  <app-video-wrapper
+    youtubeUrl="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"
+  ></app-video-wrapper>
 
-<app-second-scene (onDiscoverPath)="discoverPath()"></app-second-scene>
+  <app-first-scene></app-first-scene>
 
-<app-third-scene></app-third-scene>
+  <app-second-scene (onDiscoverPath)="discoverPath()"></app-second-scene>
 
-<app-closing-scene></app-closing-scene>
+  <app-third-scene></app-third-scene>
 
-<app-navbar></app-navbar>
+  <app-closing-scene></app-closing-scene>
 
-<router-outlet></router-outlet>
+  <app-navbar></app-navbar>
+
+  <router-outlet></router-outlet>
+<!--
+</div> -->

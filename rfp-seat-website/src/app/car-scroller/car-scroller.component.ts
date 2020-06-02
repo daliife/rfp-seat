@@ -39,12 +39,12 @@ export class CarScrollerComponent implements OnInit {
       document.documentElement.scrollTop ||
       document.body.scrollTop;
     const documentHeight = $(document).height();
-    const homeHeight = $('#home-container').height();
+    const homeHeight = $('#home-container').height() + $('#start-scene-container').height();
     const scrollPositionRelative =
       (scrollPosition - homeHeight) /
       (documentHeight - viewportHeight - homeHeight);
     const percentageResult =
-      scrollPosition - $('#home-container').height() < 0
+      scrollPosition - homeHeight < 0
         ? 0
         : scrollPositionRelative;
     return percentageResult;

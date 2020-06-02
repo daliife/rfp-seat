@@ -1,6 +1,6 @@
 .fixed-position{
   display: inline-flex;
-  top: 40%;
+  top: 20%;
   position: absolute;
 }
 
@@ -25,12 +25,13 @@
 
 #car{
   width: 100%;
-  /* margin: 0px 40px; */
+  background-color: white;
 }
 
 .stepper{
   background: url(../../assets/navigation-bar/stepper.svg);
   background-repeat: no-repeat;
   width: 100%;
-  object-fit: contain;
+  object-fit: none;
+  height: 110px;
 }

@@ -1,26 +1,32 @@
 #scene{
-  height: 768px;
+  height: 1080px;
   background-color: white;
   justify-content: center;
   display: flex;
 }
 
 .parallax-layer{
-  height: 768px;
+  height: 1080px;
   width: 100%;
   align-items: center;
 }
 
 .layer{
   background-repeat: no-repeat;
+  display: block;
   height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 .background{ background: url(../../assets/parallax/PLANO5.png) no-repeat 50% 100%; }
-.mountains-1 { background: url(../../assets/parallax/PLANO4.png) no-repeat 50% 100%; }
-.mountains-2 { background: url(../../assets/parallax/PLANO3.png) no-repeat 50% 100%; }
+.mountains-3 { background: url(../../assets/parallax/PLANO5.png) no-repeat 50% 100%; }
+.mountains-2 { background: url(../../assets/parallax/PLANO4.png) no-repeat 50% 100%; }
+.mountains-1 { background: url(../../assets/parallax/PLANO3.png) no-repeat 50% 100%; }
 .car { background: url(../../assets/parallax/PLANO2.png) no-repeat 50% 100%; }
 .grass { background: url(../../assets/parallax/PLANO1.png) no-repeat 50% 100%; }
+.filter { background: url(../../assets/parallax/CAPA_FILTRO.png) no-repeat 50% 100%; }
 
 .title-parallax{
   color: #0f0f0f;
@@ -33,7 +39,6 @@
   color: #0f0f0f;
   text-align: center;
   font-size: 25px;
-  font-family: SeatBcn-Regular;
   margin: 40px 0px;
 }
 
@@ -46,5 +51,5 @@
 }
 
 #text-home-layer{
-  top: 20%!important;
+  top: 10%!important;
 }

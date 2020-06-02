@@ -11,7 +11,6 @@
 .close-section-button{
   margin: 30px;
 }
-
 .add-inferior-space{
   margin-bottom: 40px;
 }
@@ -22,7 +21,6 @@
   margin-bottom: 40px;
   margin-top: 80px;
 }
-
 .download-button {
   border-radius: 4px;
   background-color: #ea5d1a;
@@ -34,7 +32,6 @@
   border: solid 1px #ea5d1a;
   color: #ea5d1a;
 }
-
 .text-buttons{
   padding: 12px 35px;
   font-weight: bold;
@@ -44,7 +41,7 @@
   letter-spacing: normal;
   text-align: center;
   font-size: 18px;
-  font-family: SeatBcn-Regular;
+  font-family: "SeatBcn-Regular";
 }
 
 

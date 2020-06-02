@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CarScrollerComponent } from './car-scroller/car-scroller.component';
 import { VideoWrapperComponent } from './video-wrapper/video-wrapper.component';
@@ -17,7 +16,6 @@ import { StartSceneComponent } from './start-scene/start-scene.component';
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent,
     NavbarComponent,
     CarScrollerComponent,
     VideoWrapperComponent,
