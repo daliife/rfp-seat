@@ -1,8 +1,8 @@
 #scene{
   height: 1080px;
   background-color: white;
-  justify-content: center;
-  display: flex;
+  /* justify-content: center;
+  display: flex; */
 }
 
 .parallax-layer{
@@ -20,19 +20,68 @@
   margin: 0;
 }
 
-.background{ background: url(../../assets/parallax/PLANO5.png) no-repeat 50% 100%; }
-.mountains-3 { background: url(../../assets/parallax/PLANO5.png) no-repeat 50% 100%; }
-.mountains-2 { background: url(../../assets/parallax/PLANO4.png) no-repeat 50% 100%; }
-.mountains-1 { background: url(../../assets/parallax/PLANO3.png) no-repeat 50% 100%; }
-.car { background: url(../../assets/parallax/PLANO2.png) no-repeat 50% 100%; }
-.grass { background: url(../../assets/parallax/PLANO1.png) no-repeat 50% 100%; }
-.filter { background: url(../../assets/parallax/CAPA_FILTRO.png) no-repeat 50% 100%; }
+.background{
+  background: url(../../assets/parallaxTest/PLANO6.png) no-repeat 50% 100%;
+  background-size: cover;
+  position: absolute;
+    width: 110%;
+  left: -5%;
+  top: -5%;
+
+}
+.mountains-3 {
+  background: url(../../assets/parallaxTest/PLANO5.png) no-repeat 50% 100%;
+  background-size: cover;
+  position: absolute;
+    width: 110%;
+  left: -5%;
+  top: -5%;
+}
+.mountains-2 {
+  background: url(../../assets/parallaxTest/PLANO4.png) no-repeat 50% 100%;
+  background-size: cover;
+  position: absolute;
+    width: 110%;
+  left: -5%;
+  top: -5%;
+}
+.mountains-1 {
+  background: url(../../assets/parallaxTest/PLANO3.png) no-repeat 50% 100%;
+  background-size: cover;
+  position: absolute;
+    width: 110%;
+  left: -5%;
+  top: -5%;
+}
+.car {
+  background: url(../../assets/parallaxTest/PLANO2.png) no-repeat 50% 100%;
+  background-size: cover;
+  position: absolute;
+    width: 110%;
+  left: -5%;
+  top: -5%;
+}
+.grass {
+  background: url(../../assets/parallaxTest/PLANO1.png) no-repeat 50% 100%;
+  background-size: cover;
+  position: absolute;
+    width: 110%;
+  left: -5%;
+  top: -5%;
+}
+.filter {
+  background: url(../../assets/parallaxTest/CAPA_FILTRO.png) no-repeat 50% 100%;
+  background-size: cover;
+  position: absolute;
+    width: 110%;
+  left: -5%;
+  top: -5%;
+}
 
 .title-parallax{
   color: #0f0f0f;
   text-align: center;
   font-size: 68px;
-
 }
 
 .subtitle-parallax{
