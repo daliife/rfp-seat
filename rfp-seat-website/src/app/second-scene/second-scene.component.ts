@@ -6,20 +6,20 @@ import {
   AfterViewInit,
   Input,
   EventEmitter,
-} from "@angular/core";
-import { fromEvent } from "rxjs";
-import { switchMap, takeUntil, pairwise } from "rxjs/operators";
+} from '@angular/core';
+import { fromEvent } from 'rxjs';
+import { switchMap, takeUntil, pairwise } from 'rxjs/operators';
 
-import { MyRect } from "./rectangle.component";
+import { MyRect } from './rectangle.component';
 
 @Component({
-  selector: "app-second-scene",
-  templateUrl: "./second-scene.component.html",
-  styleUrls: ["./second-scene.component.css"],
+  selector: 'app-second-scene',
+  templateUrl: './second-scene.component.html',
+  styleUrls: ['./second-scene.component.css'],
 })
 export class SecondSceneComponent implements AfterViewInit {
   // a reference to the canvas element from our template
-  @ViewChild("canvas") public canvas: ElementRef;
+  @ViewChild('canvas') public canvas: ElementRef;
 
   // setting a width and height for the canvas
   @Input() public width;
@@ -41,11 +41,11 @@ export class SecondSceneComponent implements AfterViewInit {
   private cx: CanvasRenderingContext2D;
 
   public ngAfterViewInit() {
-    this.width = document.getElementById("canvas").offsetWidth;
-    this.height = document.getElementById("canvas").offsetHeight;
+    this.width = document.getElementById('canvas').offsetWidth;
+    this.height = document.getElementById('canvas').offsetHeight;
     // get the context
     this.canvasEl = this.canvas.nativeElement;
-    this.cx = this.canvasEl.getContext("2d");
+    this.cx = this.canvasEl.getContext('2d');
 
     const cx = this.cx;
 
@@ -55,13 +55,13 @@ export class SecondSceneComponent implements AfterViewInit {
 
     // set some default properties about the line
     this.cx.lineWidth = 3;
-    this.cx.lineCap = "round";
-    this.cx.strokeStyle = "#000";
+    this.cx.lineCap = 'round';
+    this.cx.strokeStyle = '#000';
 
     const url2 =
-      "https://cloud.githubusercontent.com/assets/4652816/12771961/5341c3c4-ca68-11e5-844c-f659831d9c00.jpg";
+      'https://cloud.githubusercontent.com/assets/4652816/12771961/5341c3c4-ca68-11e5-844c-f659831d9c00.jpg';
 
-    const url = "../../assets/forest_paint.jpg";
+    const url = '../../assets/forest_paint.jpg';
 
     const img = new Image();
     img.src = url;
@@ -75,16 +75,16 @@ export class SecondSceneComponent implements AfterViewInit {
 
   private captureEvents(canvasEl: HTMLCanvasElement) {
     // this will capture all mousedown events from the canvas element
-    fromEvent(canvasEl, "mousedown")
+    fromEvent(canvasEl, 'mousedown')
       .pipe(
         switchMap((e) => {
           // after a mouse down, we'll record all mouse moves
-          return fromEvent(canvasEl, "mousemove").pipe(
+          return fromEvent(canvasEl, 'mousemove').pipe(
             // we'll stop (and unsubscribe) once the user releases the mouse
             // this will trigger a 'mouseup' event
-            takeUntil(fromEvent(canvasEl, "mouseup")),
+            takeUntil(fromEvent(canvasEl, 'mouseup')),
             // we'll also stop (and unsubscribe) once the mouse leaves the canvas (mouseleave event)
-            takeUntil(fromEvent(canvasEl, "mouseleave")),
+            takeUntil(fromEvent(canvasEl, 'mouseleave')),
             // pairwise lets us get the previous value to draw a line from
             // the previous point to the current point
             pairwise()
@@ -126,7 +126,7 @@ export class SecondSceneComponent implements AfterViewInit {
       return;
     }
 
-    this.cx.globalCompositeOperation = "destination-out";
+    this.cx.globalCompositeOperation = 'destination-out';
 
     // start our drawing path
     this.cx.beginPath();
@@ -144,7 +144,7 @@ export class SecondSceneComponent implements AfterViewInit {
 
       if (rect.contains(currentPos.x, currentPos.y)) {
         this.onDiscoverPath.emit();
-        this.canvas.nativeElement.classList.add("slow-hide");
+        this.canvas.nativeElement.classList.add('slow-hide');
       }
     }
   }
@@ -157,11 +157,10 @@ export class SecondSceneComponent implements AfterViewInit {
           this.currentFrame = this.currentFrame - this.deltaFrame;
         }
         const newPath =
-          "../../assets/speedometer/Attack__00" +
-          Math.floor(this.currentFrame / 10) +
-          ".png";
-        $("#speedometer").attr("src", newPath);
-        this.rotate(this.currentFrame * 2.7);
+          '../../assets/speedometer/' +
+          (Math.floor(this.currentFrame / 10) + 1) +
+          '.png';
+        $('#speedometer').attr('src', newPath);
       }, this.updateInterval);
     }
   }
@@ -173,30 +172,20 @@ export class SecondSceneComponent implements AfterViewInit {
         this.currentFrame = this.currentFrame + this.deltaFrame;
       }
       const newPath =
-        "../../assets/speedometer/Attack__00" +
-        Math.floor(this.currentFrame / 10) +
-        ".png";
-      $("#speedometer").attr("src", newPath);
-      this.rotate(this.currentFrame * 2.7);
+        '../../assets/speedometer/' +
+        (Math.floor(this.currentFrame / 10) + 1) +
+        '.png';
+      $('#speedometer').attr('src', newPath);
     }, this.updateInterval);
   }
 
   mousemove(e) {
     const x = e.clientX - this.canvasEl.getBoundingClientRect().left;
     const y = e.clientY - this.canvasEl.getBoundingClientRect().top;
-    $("#speedometer").css({
-      left: x + 10,
-      top: y + 10,
-    });
-  }
-
-  private rotate(degrees) {
-    $("#needle").css({
-      "-webkit-transform": "rotate(" + degrees + "deg)",
-      "-moz-transform": "rotate(" + degrees + "deg)",
-      "-ms-transform": "rotate(" + degrees + "deg)",
-      "-o-transform": "rotate(" + degrees + "deg)",
-      transform: "rotate(" + degrees + "deg)",
+    $('#speedometer').css(
+    {
+      left: x + 25,
+      top: y,
     });
   }
 }

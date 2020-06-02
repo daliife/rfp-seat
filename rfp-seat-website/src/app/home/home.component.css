@@ -16,11 +16,11 @@
   height: 100%;
 }
 
-.background{ background: url(../../assets/parallax/background.svg) no-repeat 0% 100%; }
-.mountains-1 { background: url(../../assets/parallax/mounatins-1.svg) no-repeat 0% 100%; }
-.mountains-2 { background: url(../../assets/parallax/mountains-2.svg) no-repeat 0% 100%; }
-.car { background: url(../../assets/parallax/car.svg) no-repeat 0% 100%; }
-.grass { background: url(../../assets/parallax/grass.svg) no-repeat 0% 100%; }
+.background{ background: url(../../assets/parallax/PLANO5.png) no-repeat 50% 100%; }
+.mountains-1 { background: url(../../assets/parallax/PLANO4.png) no-repeat 50% 100%; }
+.mountains-2 { background: url(../../assets/parallax/PLANO3.png) no-repeat 50% 100%; }
+.car { background: url(../../assets/parallax/PLANO2.png) no-repeat 50% 100%; }
+.grass { background: url(../../assets/parallax/PLANO1.png) no-repeat 50% 100%; }
 
 
 
