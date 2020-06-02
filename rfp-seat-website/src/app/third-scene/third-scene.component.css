@@ -14,6 +14,7 @@
   width: 100%;
   height: 100%;
   z-index: 5;
+  text-align: right;
 }
 
 .span-separation{
@@ -25,20 +26,20 @@
 }
 
 #button-road-1{
-  top: 26%;
-  left: 45%;
-  position: inherit;
-}
-
-#button-road-2{
-  top: 28%;
+  top: 10%;
   right: 30%;
   position: inherit;
 }
 
+#button-road-2{
+  top: 10%;
+  right: 20%;
+  position: inherit;
+}
+
 #button-road-3{
-  top: 46%;
-  left: 55%;
+  top: 10%;
+  right: 10%;
   position: inherit;
 }
 
