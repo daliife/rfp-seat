@@ -185,8 +185,8 @@ export class SecondSceneComponent implements AfterViewInit {
       const y = e.clientY - this.canvasEl.getBoundingClientRect().top;
       $('#speedometer').css(
       {
-        left: x + 25,
-        top: y,
+        left: x + 30,
+        top: y - 60,
       });
     }
   }
