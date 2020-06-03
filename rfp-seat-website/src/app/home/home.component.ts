@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Parallax from 'parallax-js';
 
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -22,11 +21,8 @@ export class HomeComponent implements OnInit {
       relativeInput: false,
       hoverOnly: true
     });
-    parallaxInstance.friction(0.2, 0.2);
-
-    // COUNTER
-    this.reloadBtn = document.querySelector('.reload');
-    this.timerEl = document.querySelector('.timer');
+    // parallaxInstance.friction(0.2, 0.2);
+    // parallaxInstance.limitX(2000);
   }
 
 }
