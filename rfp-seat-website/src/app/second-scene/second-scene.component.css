@@ -25,3 +25,7 @@ canvas.slow-hide, #speedometer.slow-hide {
   height: 120px;
   pointer-events: none;
 }
+
+#second-scene-minigame{
+  height: 767px;
+}

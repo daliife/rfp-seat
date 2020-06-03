@@ -21,12 +21,11 @@ export class SecondSceneComponent implements AfterViewInit {
   // a reference to the canvas element from our template
   @ViewChild('canvas') public canvas: ElementRef;
 
-  // setting a width and height for the canvas
   @Input() public width;
 
   @Input() public height;
 
-  @Output() onDiscoverPath: EventEmitter<any> = new EventEmitter();
+  @Output() discoverPath = new EventEmitter<any>();
 
   currentFrame = 0;
 
@@ -44,7 +43,7 @@ export class SecondSceneComponent implements AfterViewInit {
 
   public ngAfterViewInit() {
     this.width = document.getElementById('canvas').offsetWidth;
-    this.height = document.getElementById('canvas').offsetHeight;
+    this.height = document.getElementById('second-scene-minigame').offsetHeight; // document.getElementById('canvas').offsetHeight;
     // get the context
     this.canvasEl = this.canvas.nativeElement;
     this.cx = this.canvasEl.getContext('2d');
@@ -142,7 +141,7 @@ export class SecondSceneComponent implements AfterViewInit {
       this.cx.stroke();
 
       if (rect.contains(currentPos.x, currentPos.y)) {
-        this.onDiscoverPath.emit();
+        this.discoverPath.emit();
         this.canvas.nativeElement.classList.add('slow-hide');
         $('#speedometer').addClass('slow-hide');
         this.showingSpeedometer = false;
