@@ -18,11 +18,12 @@ export class HomeComponent implements OnInit {
     const scene = document.getElementById('scene');
     const parallaxInstance = new Parallax(scene,
     {
-      relativeInput: false,
-      hoverOnly: true
+      relativeInput: true,
+      hoverOnly: true,
+      frictionY: 0.075,
+      frictionX: 0.075,
+      limitY: 1000,
+      limitX: 0
     });
-    // parallaxInstance.friction(0.2, 0.2);
-    // parallaxInstance.limitX(2000);
   }
-
 }

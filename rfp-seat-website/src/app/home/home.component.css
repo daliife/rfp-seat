@@ -55,8 +55,8 @@
   background: url(../../assets/parallaxTest/PLANO2-min.png) no-repeat 50% 100%;
   background-size: cover;
   position: absolute;
-  width: 120%;
-  left: -10%;
+  width: 110%;
+  left: -5%;
   top: -5%;
 }
 .grass {
@@ -85,12 +85,13 @@
 .subtitle-parallax{
   color: #0f0f0f;
   text-align: center;
-  font-size: 25px;
+  font-size: 37px;
   margin: 40px 0px;
 }
 
 .logo-parallax{
   text-align: center;
+  padding-top: 50px;
 }
 
 .logo-home{
@@ -98,5 +99,5 @@
 }
 
 #text-home-layer{
-  top: 12%!important;
+  top: 10%!important;
 }
