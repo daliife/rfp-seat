@@ -14,29 +14,24 @@
 .add-inferior-space{
   margin-bottom: 40px;
 }
-
 .relative-row{
   position: relative;
 }
-
 #download-button{
   left: 12%;
-  top: 46%;
+  top: 10%;
   position: inherit;
 }
-
 #email-button{
   left: 44%;
-  top: 22%;
+  top: 62%;
   position: inherit;
 }
-
 #video-button{
-  left: 77%;
-  top: 68%;
+  left: 40%;
+  top: 80%;
   position: inherit;
 }
-
 .title-download{
   margin-bottom: 40px;
   margin-top: 80px;
@@ -63,33 +58,29 @@
   font-size: 18px;
   font-family: "SeatBcn-Regular";
 }
-
 .floating-buttons-selection {
   position: absolute;
   width: 100%;
   height: 100%;
   z-index: 5;
-  transform: translatey(0px);
-  animation: float 3s ease-in-out infinite;
   background-color: transparent;
 }
-
 .floating-button {
   box-sizing: border-box;
 	overflow: hidden;
-	box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
   transition: all .2s ease-in-out;
 }
-
 .floating-button:hover{
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
-
 .image-button {
   width: 100%;
   height: auto;
 }
-
+.floating-effect{
+  transform: translatey(0px);
+  animation: float 3s ease-in-out infinite;
+}
 @keyframes float {
 	0% {
 		/* box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6); */
@@ -97,7 +88,7 @@
 	}
 	50% {
 		/* box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2); */
-		transform: translatey(-20px);
+		transform: translatey(-30px);
 	}
 	100% {
 		/* box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6); */

@@ -22,8 +22,8 @@ canvas.slow-hide, #speedometer.slow-hide {
 
 #speedometer {
   position: absolute;
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   pointer-events: none;
   z-index: 20;
 }

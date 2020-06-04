@@ -61,7 +61,8 @@
   stroke: black;
 }
 .btn-radio svg path {
-  stroke:  #ea5d1a;
+  /* stroke:  #ea5d1a; */
+  stroke: #eb71a3
 }
 .btn-radio svg path.inner {
   stroke-width: 6;

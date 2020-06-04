@@ -1,8 +1,8 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 @Component({
-  selector: "app-third-scene",
-  templateUrl: "./third-scene.component.html",
-  styleUrls: ["./third-scene.component.css"],
+  selector: 'app-third-scene',
+  templateUrl: './third-scene.component.html',
+  styleUrls: ['./third-scene.component.css'],
 })
 export class ThirdSceneComponent implements OnInit {
   flag = false;
@@ -14,8 +14,8 @@ export class ThirdSceneComponent implements OnInit {
   ngOnInit(): void {}
 
   selectOption(option: number) {
-    if(this.currentImage != option){
-      const newPath = '../../assets/roads_' + option + '.png';
+    if (this.currentImage !== option) {
+      const newPath = '../../assets/roads/camino' + option + '.png';
       const element = document.querySelector('.floating-img');
       if (!this.flag) {
         $('.floating-img').attr('src', newPath);
@@ -31,7 +31,6 @@ export class ThirdSceneComponent implements OnInit {
       }
       this.currentImage = option;
     }
-
   }
 
   fadeIn() {
