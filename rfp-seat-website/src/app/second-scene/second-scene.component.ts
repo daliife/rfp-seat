@@ -42,33 +42,35 @@ export class SecondSceneComponent implements AfterViewInit {
   private cx: CanvasRenderingContext2D;
 
   public ngAfterViewInit() {
-    this.width = document.getElementById('canvas').offsetWidth;
-    this.height = document.getElementById('second-scene-minigame').offsetHeight; // document.getElementById('canvas').offsetHeight;
-    // get the context
+
     this.canvasEl = this.canvas.nativeElement;
     this.cx = this.canvasEl.getContext('2d');
 
-    const cx = this.cx;
+    document.getElementById('imatge2').onload = () => {
+      const width = document.getElementById('canvas').offsetWidth;
+      let height = document.getElementById('canvas').offsetHeight;
+      height = document.getElementById('imatge2').offsetHeight;
+      this.canvasEl.width = width;
+      this.canvasEl.height = height;
 
-    // set the width and height
-    this.canvasEl.width = this.width;
-    this.canvasEl.height = this.height;
+      const cx = this.cx;
+      // set some default properties about the line
+      this.cx.lineWidth = 3;
+      this.cx.lineCap = 'round';
+      this.cx.strokeStyle = '#000';
 
-    // set some default properties about the line
-    this.cx.lineWidth = 3;
-    this.cx.lineCap = 'round';
-    this.cx.strokeStyle = '#000';
+      const url = '../../assets/forest/borrable.png';
+      const img = new Image();
+      img.src = url;
+      img.onload = () => {
+        cx.drawImage(img, 0, 0, this.canvasEl.width, this.canvasEl.height);
+      };
 
-    const url = '../../assets/forest/borrable.png';
+      // we'll implement this method to start capturing mouse events
+      this.captureEvents(this.canvasEl);
 
-    const img = new Image();
-    img.src = url;
-    img.onload = () => {
-      cx.drawImage(img, 0, 0, this.canvasEl.width, this.canvasEl.height);
     };
 
-    // we'll implement this method to start capturing mouse events
-    this.captureEvents(this.canvasEl);
   }
 
   private captureEvents(canvasEl: HTMLCanvasElement) {

@@ -34,6 +34,7 @@ export class FirstSceneComponent implements AfterViewInit {
   private position: { x: number; y: number };
   private loop;
 
+  private suitcases = [];
   private counterSuitcase = 0;
 
   public ngAfterViewInit() {
@@ -113,6 +114,12 @@ export class FirstSceneComponent implements AfterViewInit {
       this.draw();
     };
 
+    for (let i = 0; i < 4; i++) {
+      this.suitcases[i] = new Image();
+      this.suitcases[i].src = '../../assets/suitcases/maleta-' + (i + 1).toString() + '.svg';
+      //this.suitcases[i].onload = () => { console.log('loaded' + i); };
+    }
+
     // get the context
     const cx = this.cx;
 
@@ -139,13 +146,15 @@ export class FirstSceneComponent implements AfterViewInit {
     }
     const colors = ['#8ececf', '#b7d8aa', '#ffde4a', '#d1b8c7'];
     for (let i = 0; i < this.dragObjects.length; i++) {
-      this.cx.fillStyle = colors[i];
-      this.cx.fillRect(
-        this.dragObjects[i].getCoordinates().x,
-        this.dragObjects[i].getCoordinates().y,
-        this.dragObjects[i].getWidthAndHeight().width,
-        this.dragObjects[i].getWidthAndHeight().height
-      );
+      if (this.suitcases != null && this.suitcases[i] != null) {
+        this.cx.drawImage(
+          this.suitcases[i],
+          this.dragObjects[i].getCoordinates().x,
+          this.dragObjects[i].getCoordinates().y,
+          this.dragObjects[i].getWidthAndHeight().width,
+          this.dragObjects[i].getWidthAndHeight().height
+        );
+      }
     }
   }
 
@@ -182,7 +191,6 @@ export class FirstSceneComponent implements AfterViewInit {
     }
     this.position = currentPos;
 
-    // if (this.rect.contains(currentPos.x, currentPos.y)) console.log("inside");
   }
 
   private myUp(e) {
@@ -190,7 +198,6 @@ export class FirstSceneComponent implements AfterViewInit {
     e.stopPropagation();
 
     // clear all the dragging flags
-
     for (let i = 0; i < this.dropZones.length; i++) {
       if (this.dropZones[i].isFull()) { continue; }
       if (this.dropZones[i].contains(this.position.x, this.position.y)) {

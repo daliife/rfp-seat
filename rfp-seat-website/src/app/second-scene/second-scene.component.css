@@ -1,9 +1,8 @@
 #box {
   display: inline-block;
-  background: url("./../../assets/forest/fondo.png");
-  background-size: contain;
+  background-size: cover;
   width: 100%;
-  height: auto;
+  height: 100%;
   position: relative;
 }
 
@@ -12,6 +11,8 @@ canvas {
   width: inherit;
   opacity: 1;
   visibility: visible;
+  position: absolute;
+  left: 0;
 }
 
 canvas.slow-hide, #speedometer.slow-hide {
@@ -24,8 +25,5 @@ canvas.slow-hide, #speedometer.slow-hide {
   width: 120px;
   height: 120px;
   pointer-events: none;
-}
-
-#second-scene-minigame{
-  height: 767px;
+  z-index: 20;
 }
