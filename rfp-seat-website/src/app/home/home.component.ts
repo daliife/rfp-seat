@@ -14,15 +14,14 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // PARALLAX
     const scene = document.getElementById('scene');
     const parallaxInstance = new Parallax(scene,
     {
       relativeInput: true,
       hoverOnly: true,
-      frictionY: 0.075,
-      frictionX: 0.075,
-      limitY: 1000,
+      frictionY: 0.15,
+      frictionX: 0.15,
+      limitY: false,
       limitX: 0
     });
   }
