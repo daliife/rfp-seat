@@ -23,57 +23,43 @@
   background-size: cover;
   position: absolute;
   width: 100%;
-  /* left: -5%;
-  top: -5%; */
-
+  top: -5%;
 }
 .mountains-3 {
   background: url(../../assets/parallax/PLANO5.png) no-repeat 50% 100%;
   background-size: cover;
   position: absolute;
   width: 100%;
-  /* left: -5%;
-  top: -5%; */
 }
 .mountains-2 {
   background: url(../../assets/parallax/PLANO4.png) no-repeat 50% 100%;
   background-size: cover;
   position: absolute;
   width: 100%;
-  /* left: -5%;
-  top: -5%; */
 }
 .mountains-1 {
   background: url(../../assets/parallax/PLANO3.png) no-repeat 50% 100%;
   background-size: cover;
   position: absolute;
   width: 100%;
-  /* left: -5%;
-  top: -5%; */
 }
 .car {
   background: url(../../assets/parallax/PLANO2.png) no-repeat 50% 100%;
   background-size: cover;
   position: absolute;
   width: 100%;
-  /* left: -5%;
-  top: -5%; */
 }
 .grass {
   background: url(../../assets/parallax/PLANO1.png) no-repeat 50% 100%;
   background-size: cover;
   position: absolute;
   width: 100%;
-  /* left: -5%;
-  top: -5%; */
 }
 .filter {
   background: url(../../assets/parallax/CAPA_FILTRO.png) no-repeat 50% 100%;
   background-size: cover;
   position: absolute;
   width: 100%;
-  /* left: -5%;
-  top: -5%; */
 }
 
 .title-parallax{
