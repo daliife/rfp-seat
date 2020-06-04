@@ -12,9 +12,40 @@
 
 </head>
 <body>
-  <!--[if IE]>
-      <div class="warning"><p>For the best experience please open using Chrome, Firefox or Safari</p></div>
-  <![endif]-->
+
+  <div id="ie-wrapper"
+  style="
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ea5d1a;"
+  >
+    <div class="warning" style="
+    background-color: white;
+    padding: 48px;
+    border-radius: 24px;
+    color: #ea5d1a;">
+      <h1 style="font-weight: bold;">RFP Seat Demo</h1>
+      <h3>For the best experience please open using Chrome, Firefox.</h3>
+    </div>
+  </div>
+
+  <script>
+    function isIE() {
+      ua = navigator.userAgent;
+      var is_ie = ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
+      return is_ie;
+    }
+    if (isIE()) {
+      console.log('It is InternetExplorer');
+      document.getElementById('ie-wrapper').style.display = "flex";
+    } else {
+      console.log('It is NOT InternetExplorer');
+      document.getElementById('ie-wrapper').style.display = "none";
+    }
+  </script>
+
   <app-root></app-root>
 
   <!-- Bootstrap 4.0 dependencies and js-->
