@@ -64,14 +64,14 @@ export class FirstSceneComponent implements AfterViewInit {
 
       const rect2 = new DropZone(
         this.canvasEl.width / 2 + this.canvasEl.width / 4.31,
-        this.canvasEl.height / 2 + this.canvasEl.height / 4.5,
+        this.canvasEl.height / 2 + this.canvasEl.height / 4.6,
         this.canvasEl.width / 21.9,
         this.canvasEl.height / 10
       );
 
       const rect3 = new DropZone(
         this.canvasEl.width / 2 + this.canvasEl.width / 3.5,
-        this.canvasEl.height / 2 + this.canvasEl.height / 4.5,
+        this.canvasEl.height / 2 + this.canvasEl.height / 4.6,
         this.canvasEl.width / 21.9,
         this.canvasEl.height / 10
       );
@@ -116,7 +116,7 @@ export class FirstSceneComponent implements AfterViewInit {
 
     for (let i = 0; i < 4; i++) {
       this.suitcases[i] = new Image();
-      this.suitcases[i].src = '../../assets/suitcases/maleta' + (i + 1).toString() + '.svg';
+      this.suitcases[i].src = '../../assets/suitcases/maleta' + (i + 1).toString() + '.png';
       // this.suitcases[i].onload = () => { console.log('loaded' + i); };
     }
 
@@ -136,7 +136,8 @@ export class FirstSceneComponent implements AfterViewInit {
     this.cx.clearRect(0, 0, this.canvasEl.width, this.canvasEl.height);
 
     for (let i = 0; i < this.dropZones.length; i++) {
-      this.cx.fillStyle = '#dadada';
+      this.cx.fillStyle = '#ffffff00';
+      //this.cx.fillStyle = '#ff0000';
       this.cx.fillRect(
         this.dropZones[i].getCoordinates().x,
         this.dropZones[i].getCoordinates().y,
@@ -208,7 +209,7 @@ export class FirstSceneComponent implements AfterViewInit {
             this.drop(this.dragObjects[j], this.dropZones[i]);
             this.counterSuitcase++;
             if (this.counterSuitcase >= 4) {
-              console.log('DONE');
+              $('#imatge').attr('src', '../../assets/finals/first-scene-minigame_on.png');
               this.finishLoadSuitcase.emit();
             }
           }
