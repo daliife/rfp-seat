@@ -18,18 +18,18 @@
   position: relative;
 }
 #download-button{
-  left: 12%;
-  top: 10%;
+  left: 17%;
+  top: 27%;
   position: inherit;
 }
 #email-button{
-  left: 44%;
-  top: 62%;
+  left: 42%;
+  top: 68%;
   position: inherit;
 }
 #video-button{
-  left: 40%;
-  top: 80%;
+  left: 39%;
+  top: 81%;
   position: inherit;
 }
 .title-download{
