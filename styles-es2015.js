@@ -338,7 +338,7 @@ if (content.locals) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Dev\rfp-seat\rfp-seat-website\src\styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! C:\Dev\rfp-seat\src\styles.css */"./src/styles.css");
 
 
 /***/ })
