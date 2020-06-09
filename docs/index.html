@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>RFP Seat </title>
+    <base href="C:/Program Files/Git/rfp-seat/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style type="text/css">
+      body:before {
+        content: attr(message);
+      }
+    </style>
+
+  <link rel="stylesheet" href="styles.112e1896cdcb21ba5a9d.css"></head>
+
+  <body>
+
+    <script>
+      (function(){
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect != location.href) {
+          history.replaceState(null, null, redirect);
+          // REMOVE THIS - just showing the redirect route in the UI
+          document.body.setAttribute('message', 'This page was redirected by 404.html, from the route: ' + redirect);
+        }
+        else {
+          // REMOVE THIS - just showing the redirect route in the UI
+          document.body.setAttribute('message', 'This page was loaded directly from the index.html file');
+        }
+      })();
+    </script>
+
+    <div id="ie-wrapper" style="height: 100vh; display: flex; align-items: center; justify-content: center; background-color: #ea5d1a;">
+      <div class="warning" style="background-color: white; padding: 48px; border-radius: 24px; color: #ea5d1a;">
+        <h1 style="font-weight: bold;">RFP Seat Demo</h1>
+        <h3>For the best experience please open using Chrome, Firefox.</h3>
+      </div>
+    </div>
+    <script>
+      function isIE() {
+        ua = navigator.userAgent;
+        var is_ie = ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
+        return is_ie;
+      }
+      if (isIE()) {
+        document.getElementById('ie-wrapper').style.display = "flex";
+      } else {
+        document.getElementById('ie-wrapper').style.display = "none";
+      }
+    </script>
+
+    <app-root></app-root>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+
+  <script src="runtime-es2015.0811dcefd377500b5b1a.js" type="module"></script><script src="runtime-es5.0811dcefd377500b5b1a.js" nomodule defer></script><script src="polyfills-es5.f1044614286c4864d80f.js" nomodule defer></script><script src="polyfills-es2015.1f913f16a2d346cc8bdc.js" type="module"></script><script src="main-es2015.2520cee13dec1f9ae278.js" type="module"></script><script src="main-es5.2520cee13dec1f9ae278.js" nomodule defer></script></body>
+</html>
