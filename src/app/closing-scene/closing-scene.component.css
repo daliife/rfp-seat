@@ -28,8 +28,8 @@
   position: inherit;
 }
 #video-button{
-  left: 39%;
-  top: 81%;
+  left: 45%;
+  top: 82%;
   position: inherit;
 }
 .title-download{
@@ -71,7 +71,7 @@
   transition: all 0.2s ease-in-out;
 }
 .floating-button:hover{
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 .image-button {
   width: 100%;
@@ -135,16 +135,16 @@
 
 .sound-effect{
   transform: scale(1);
-  animation: sound 0.5s ease-in-out infinite;
+  animation: sound 1s ease-in-out infinite;
 }
 @keyframes sound {
 	0% {
 		transform: scale(1);
 	}
-	5% {
+	15% {
 		transform: scale(1.1);
   }
-  10% {
+  30% {
 		transform: scale(1);
 	}
   100% {
