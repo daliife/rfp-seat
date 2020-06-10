@@ -110,29 +110,6 @@
 		transform: translatex(0px);
 	}
 }
-
-.rotate-effect{
-  transform: rotate(0deg);
-  animation: rotate 2s ease-in-out infinite;
-}
-@keyframes rotate {
-	0% {
-		transform: rotate(0deg);
-	}
-	25% {
-		transform: rotate(5deg);
-  }
-  50% {
-		transform: rotate(0deg);
-	}
-	75% {
-		transform: rotate(-5deg);
-  }
-  100% {
-		transform: rotate(0deg);
-	}
-}
-
 .sound-effect{
   transform: scale(1);
   animation: sound 1s ease-in-out infinite;
