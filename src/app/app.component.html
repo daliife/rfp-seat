@@ -1,0 +1,23 @@
+<div *ngIf="isNotMobile" class="animate__animated animate__fadeIn animate__slow">
+
+  <app-car-scroller></app-car-scroller>
+
+  <app-home></app-home>
+
+  <app-start-scene></app-start-scene>
+
+  <app-video-wrapper></app-video-wrapper>
+
+  <app-first-scene></app-first-scene>
+
+  <app-second-scene (discoverPath)="discoverPath()"></app-second-scene>
+
+  <app-third-scene></app-third-scene>
+
+  <app-closing-scene></app-closing-scene>
+
+  <app-navbar></app-navbar>
+
+  <router-outlet></router-outlet>
+
+</div>

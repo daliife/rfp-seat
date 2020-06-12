@@ -1,0 +1,26 @@
+.fixed-position{
+  display: inline-flex;
+  top: 30%;
+  position: absolute;
+}
+
+.movable{
+  z-index: 4;
+  margin: 0px 30px;
+}
+
+#navigation-bar{
+  height: 110px;
+  padding: 0px!important;
+}
+
+#car{
+  width: 100%;
+  background-color: white;
+}
+
+.stepper{
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+}

@@ -1,0 +1,32 @@
+@font-face {
+  font-family: SeatBcn-Black;
+  src: url("./assets/SeatFonts/SeatBcn-Black.woff") format("woff");
+}
+@font-face {
+  font-family: SeatBcn-Light;
+  src: url("./assets/SeatFonts/SeatBcn-Light.woff") format("woff");
+}
+@font-face {
+  font-family: SeatBcn-Regular;
+  src: url("./assets/SeatFonts/SeatBcn-Regular.woff") format("woff");
+}
+* {
+  font-family: 'SeatBcn-Black', sans-serif;
+}
+img{
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+body::-webkit-scrollbar {
+  display: none;
+  -ms-overflow-style: none;
+
+}
+.modal-backdrop{
+  z-index:-5!important;
+}
+

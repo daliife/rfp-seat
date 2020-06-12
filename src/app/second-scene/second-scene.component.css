@@ -1,0 +1,29 @@
+#box {
+  display: inline-block;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+canvas {
+  background: transparent;
+  width: inherit;
+  opacity: 1;
+  visibility: visible;
+  position: absolute;
+  left: 0;
+}
+
+canvas.slow-hide, #speedometer.slow-hide {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+#speedometer {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  pointer-events: none;
+  z-index: 20;
+}
