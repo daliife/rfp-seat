@@ -1,4 +1,4 @@
-function _createForOfIteratorHelper(o) { if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (o = _unsupportedIterableToArray(o))) { var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var it, normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _createForOfIteratorHelper(o, allowArrayLike) { var it; if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = o[Symbol.iterator](); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
 
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
@@ -111,9 +111,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           }
         }
 
-        var Zone =
-        /*#__PURE__*/
-        function () {
+        var Zone = /*#__PURE__*/function () {
           function Zone(parent, zoneSpec) {
             _classCallCheck(this, Zone);
 
@@ -432,9 +430,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           }
         };
 
-        var ZoneDelegate =
-        /*#__PURE__*/
-        function () {
+        var ZoneDelegate = /*#__PURE__*/function () {
           function ZoneDelegate(zone, parentDelegate, zoneSpec) {
             _classCallCheck(this, ZoneDelegate);
 
@@ -607,9 +603,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           return ZoneDelegate;
         }();
 
-        var ZoneTask =
-        /*#__PURE__*/
-        function () {
+        var ZoneTask = /*#__PURE__*/function () {
           function ZoneTask(type, source, callback, options, scheduleFn, cancelFn) {
             _classCallCheck(this, ZoneTask);
 
@@ -1189,9 +1183,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
         var noop = function noop() {};
 
-        var ZoneAwarePromise =
-        /*#__PURE__*/
-        function () {
+        var ZoneAwarePromise = /*#__PURE__*/function () {
           _createClass(ZoneAwarePromise, null, [{
             key: "toString",
             value: function toString() {
@@ -3808,9 +3800,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }
     }
 
-    var AppComponent =
-    /*#__PURE__*/
-    function () {
+    var AppComponent = /*#__PURE__*/function () {
       function AppComponent() {
         _classCallCheck(this, AppComponent);
 
@@ -4056,14 +4046,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var jquery__WEBPACK_IMPORTED_MODULE_1___default =
-    /*#__PURE__*/
-    __webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__); // tslint:disable-next-line: quotemark
+    var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__); // tslint:disable-next-line: quotemark
 
 
-    var CarScrollerComponent =
-    /*#__PURE__*/
-    function () {
+    var CarScrollerComponent = /*#__PURE__*/function () {
       function CarScrollerComponent() {
         _classCallCheck(this, CarScrollerComponent);
 
@@ -4212,9 +4198,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /*! @angular/core */
     "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 
-    var ClosingSceneComponent =
-    /*#__PURE__*/
-    function () {
+    var ClosingSceneComponent = /*#__PURE__*/function () {
       function ClosingSceneComponent() {
         _classCallCheck(this, ClosingSceneComponent);
       }
@@ -4342,9 +4326,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       return DragObject;
     });
 
-    var DragObject =
-    /*#__PURE__*/
-    function () {
+    var DragObject = /*#__PURE__*/function () {
       function DragObject(x, y, w, h) {
         var _this3 = this;
 
@@ -4437,9 +4419,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       return DropZone;
     });
 
-    var DropZone =
-    /*#__PURE__*/
-    function () {
+    var DropZone = /*#__PURE__*/function () {
       function DropZone(x, y, w, h) {
         var _this4 = this;
 
@@ -4535,9 +4515,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var _c0 = ["canvas"];
 
-    var FirstSceneComponent =
-    /*#__PURE__*/
-    function () {
+    var FirstSceneComponent = /*#__PURE__*/function () {
       function FirstSceneComponent() {
         _classCallCheck(this, FirstSceneComponent);
 
@@ -4595,7 +4573,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           for (var i = 0; i < 4; i++) {
             this.suitcases[i] = new Image();
-            this.suitcases[i].src = 'assets/suitcases/maleta' + (i + 1).toString() + '.png'; // this.suitcases[i].onload = () => { console.log('loaded' + i); };
+            this.suitcases[i].src = 'assets/suitcases/maleta' + (i + 1).toString() + '.png';
           } // get the context
 
 
@@ -4907,13 +4885,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var parallax_js__WEBPACK_IMPORTED_MODULE_1___default =
-    /*#__PURE__*/
-    __webpack_require__.n(parallax_js__WEBPACK_IMPORTED_MODULE_1__);
+    var parallax_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(parallax_js__WEBPACK_IMPORTED_MODULE_1__);
 
-    var HomeComponent =
-    /*#__PURE__*/
-    function () {
+    var HomeComponent = /*#__PURE__*/function () {
       function HomeComponent() {
         _classCallCheck(this, HomeComponent);
       }
@@ -5077,9 +5051,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /*! @angular/core */
     "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 
-    var NavbarComponent =
-    /*#__PURE__*/
-    function () {
+    var NavbarComponent = /*#__PURE__*/function () {
       function NavbarComponent() {
         _classCallCheck(this, NavbarComponent);
       }
@@ -5219,9 +5191,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var _c0 = ["canvas"];
 
-    var SecondSceneComponent =
-    /*#__PURE__*/
-    function () {
+    var SecondSceneComponent = /*#__PURE__*/function () {
       function SecondSceneComponent() {
         _classCallCheck(this, SecondSceneComponent);
 
@@ -5499,9 +5469,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /*! @angular/core */
     "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 
-    var StartSceneComponent =
-    /*#__PURE__*/
-    function () {
+    var StartSceneComponent = /*#__PURE__*/function () {
       function StartSceneComponent() {
         _classCallCheck(this, StartSceneComponent);
       }
@@ -5587,9 +5555,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /*! @angular/core */
     "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 
-    var ThirdSceneComponent =
-    /*#__PURE__*/
-    function () {
+    var ThirdSceneComponent = /*#__PURE__*/function () {
       function ThirdSceneComponent() {
         _classCallCheck(this, ThirdSceneComponent);
 
@@ -5831,9 +5797,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /*! @angular/core */
     "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 
-    var VideoWrapperComponent =
-    /*#__PURE__*/
-    function () {
+    var VideoWrapperComponent = /*#__PURE__*/function () {
       function VideoWrapperComponent() {
         _classCallCheck(this, VideoWrapperComponent);
       }
@@ -5945,9 +5909,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var zone_js_dist_zone__WEBPACK_IMPORTED_MODULE_0___default =
-    /*#__PURE__*/
-    __webpack_require__.n(zone_js_dist_zone__WEBPACK_IMPORTED_MODULE_0__);
+    var zone_js_dist_zone__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(zone_js_dist_zone__WEBPACK_IMPORTED_MODULE_0__);
     /* harmony import */
 
 

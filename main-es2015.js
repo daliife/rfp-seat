@@ -3488,7 +3488,6 @@ class FirstSceneComponent {
         for (let i = 0; i < 4; i++) {
             this.suitcases[i] = new Image();
             this.suitcases[i].src = 'assets/suitcases/maleta' + (i + 1).toString() + '.png';
-            // this.suitcases[i].onload = () => { console.log('loaded' + i); };
         }
         // get the context
         const cx = this.cx;
