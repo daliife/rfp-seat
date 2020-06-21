@@ -59,7 +59,7 @@ export class SecondSceneComponent implements AfterViewInit {
       this.cx.lineCap = 'round';
       this.cx.strokeStyle = '#000';
 
-      const url = '../../assets/forest/borrable.png';
+      const url = 'assets/forest/borrable.png';
       const img = new Image();
       img.src = url;
       img.onload = () => {
@@ -159,7 +159,7 @@ export class SecondSceneComponent implements AfterViewInit {
           this.currentFrame = this.currentFrame - this.deltaFrame;
         }
         const newPath =
-          '../../assets/speedometer/' +
+          'assets/speedometer/' +
           (Math.floor(this.currentFrame / 10) + 1) +
           '.png';
         $('#speedometer').attr('src', newPath);
@@ -174,7 +174,7 @@ export class SecondSceneComponent implements AfterViewInit {
         this.currentFrame = this.currentFrame + this.deltaFrame;
       }
       const newPath =
-        '../../assets/speedometer/' +
+        'assets/speedometer/' +
         (Math.floor(this.currentFrame / 10) + 1) +
         '.png';
       $('#speedometer').attr('src', newPath);

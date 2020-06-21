@@ -15,7 +15,7 @@ export class ThirdSceneComponent implements OnInit {
 
   selectOption(option: number) {
     if (this.currentImage !== option) {
-      const newPath = '../../assets/roads/camino' + option + '.png';
+      const newPath = 'assets/roads/camino' + option + '.png';
       const element = document.querySelector('.floating-img');
       if (!this.flag) {
         $('.floating-img').attr('src', newPath);
