@@ -208,7 +208,7 @@ export class FirstSceneComponent implements AfterViewInit {
             this.drop(this.dragObjects[j], this.dropZones[i]);
             this.counterSuitcase++;
             if (this.counterSuitcase >= 4) {
-              $('#imatge').attr('src', '../../assets/finals/first-scene-minigame_on.png');
+              $('#imatge').attr('src', 'assets/finals/first-scene-minigame_on.png');
               this.finishLoadSuitcase.emit();
             }
           }
