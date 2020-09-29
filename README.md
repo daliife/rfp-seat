@@ -2,25 +2,30 @@
 
 ## Description
 
-* Small interactive web that works as a presentation card for the client SEAT.
-* With 3 minigames made with the canvas tag, a parallax library and others...
-* You can find a _github pages_ live version [here](https://daliife.github.io/rfp-seat/). 
+- Small interactive web that works as a presentation card for the client SEAT.
+- With 3 minigames made with the canvas tag, a parallax library and others...
+- You can find a _github pages_ live version [here](https://daliife.github.io/rfp-seat/).
 
 ## Screenshots
 
 ### Introduction
+
 ![Home](https://i.imgur.com/UdtUZCJ.png)
 
 ### Minigame nº1 - canvas with drag & drop
+
 ![Minigame nº1](https://i.imgur.com/H6HEQBi.png)
 
 ### Minigame nº2 - canvas with paint/erase image effect
+
 ![Minigame nº2](https://i.imgur.com/9LWyAQ2.png)
 
 ### Minigame nº3 - Bullet selector with fade in
+
 ![Minigame nº3](https://i.imgur.com/zY8uXZE.png)
 
 ### Closure buttons
+
 ![Final link buttons](https://i.imgur.com/WHoxvCs.png)
 
 ## Angular instructions
