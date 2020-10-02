@@ -1,30 +1,80 @@
 <div id="closing-container" class="container-fluid px-0">
   <div class="row mx-0">
-      <div class="col-12 px-0">
-        <img src="assets/finals/closing-scene.png" class="img-fluid w-100">
-      </div>
+    <div class="col-12 px-0">
+      <img src="assets/finals/closing-scene.png" class="img-fluid w-100" />
+    </div>
   </div>
   <div class="row mx-0 relative-row">
     <div class="floating-buttons-selection">
-      <a id="download-button" class="floating-effect"
-      href="https://everisgroup-my.sharepoint.com/:f:/g/personal/egarccor_everis_com/Em1knhcP3M9ErwCe1R42FZUB7QuwcYyg6TKERivNmjWIGw?e=2kcRyd" target="_blank">
-        <img class="floating-button" src="assets/buttons/drone.png"/>
+      <a
+        [ngStyle]="{
+          'pointer-events': disabledButtons[0] ? 'none' : 'auto',
+          opacity: disabledButtons[0] ? '0.75' : '1',
+          filter: disabledButtons[0] ? 'grayscale(1)' : 'none'
+        }"
+        id="video-button"
+        class="sound-effect"
+        data-toggle="modal"
+        data-target="#videoModal"
+        (click)="nextStep(1)"
+      >
+        <img class="floating-button" src="assets/buttons/pantalla.png" />
       </a>
-       <a id="video-button" class="sound-effect" data-toggle="modal" data-target="#videoModal">
-        <img class="floating-button" src="assets/buttons/pantalla.png"/>
-       </a>
+      <a
+        [ngStyle]="{
+          'pointer-events': disabledButtons[1] ? 'none' : 'auto',
+          opacity: disabledButtons[1] ? '0.75' : '1',
+          filter: disabledButtons[1] ? 'grayscale(1)' : 'none'
+        }"
+        id="download-button"
+        class="floating-effect"
+        href="https://everisgroup-my.sharepoint.com/:f:/g/personal/egarccor_everis_com/Ev-BRIgvyhJChaan10OpUDIB1H1Z5bE-UPfFxlu4AKgeow?e=NL7mX6"
+        target="_blank"
+        (click)="nextStep(2)"
+      >
+        <img class="floating-button" src="assets/buttons/drone.png" />
+      </a>
+      <a
+        [ngStyle]="{
+          'pointer-events': disabledButtons[2] ? 'none' : 'auto',
+          opacity: disabledButtons[2] ? '0.75' : '1',
+          filter: disabledButtons[2] ? 'grayscale(1)' : 'none'
+        }"
+        id="email-button"
+        class="vibrate-effect"
+        href="http://everis-rfp-seat.azurewebsites.net/scp-guia-de-estilo/"
+        target="_blank"
+      >
+        <img class="floating-button" src="assets/buttons/movil.png" />
+      </a>
     </div>
     <div class="col-12 px-0">
-      <img src="assets/finals/closing-scene-minigame.png" class="img-fluid w-100">
+      <img
+        src="assets/finals/closing-scene-minigame.png"
+        class="img-fluid w-100"
+      />
     </div>
   </div>
 </div>
-<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModalTitle" aria-hidden="true">
+<div
+  class="modal fade"
+  id="videoModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="videoModalTitle"
+  aria-hidden="true"
+>
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-body">
         <div class="embed-responsive embed-responsive-16by9">
-          <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/427336620" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+          <iframe
+            class="embed-responsive-item"
+            src="https://player.vimeo.com/video/463454222"
+            frameborder="0"
+            allow="autoplay; fullscreen"
+            allowfullscreen
+          ></iframe>
         </div>
       </div>
     </div>

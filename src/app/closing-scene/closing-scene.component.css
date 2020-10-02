@@ -5,34 +5,34 @@
   background-color: black;
   border-radius: 15px;
 }
-#videoModal{
-  background-color:rgba(0, 0, 0, 0.7);
+#videoModal {
+  background-color: rgba(0, 0, 0, 0.7);
 }
-.close-section-button{
+.close-section-button {
   margin: 30px;
 }
-.add-inferior-space{
+.add-inferior-space {
   margin-bottom: 40px;
 }
-.relative-row{
+.relative-row {
   position: relative;
 }
-#download-button{
-  left: 17%;
-  top: 27%;
+#download-button {
+  left: 18%;
+  top: 30%;
   position: inherit;
 }
-#email-button{
-  left: 42%;
-  top: 68%;
+#email-button {
+  left: 51.9%;
+  top: 69%;
   position: inherit;
 }
-#video-button{
-  left: 45%;
-  top: 82%;
+#video-button {
+  left: 51%;
+  bottom: 4.7%;
   position: inherit;
 }
-.title-download{
+.title-download {
   margin-bottom: 40px;
   margin-top: 80px;
 }
@@ -47,7 +47,7 @@
   border: solid 1px #ea5d1a;
   color: #ea5d1a;
 }
-.text-buttons{
+.text-buttons {
   padding: 12px 35px;
   font-weight: bold;
   font-stretch: normal;
@@ -67,70 +67,70 @@
 }
 .floating-button {
   box-sizing: border-box;
-	overflow: hidden;
+  overflow: hidden;
   transition: all 0.2s ease-in-out;
 }
-.floating-button:hover{
+.floating-button:hover {
   transform: scale(1.15);
 }
 .image-button {
   width: 100%;
   height: auto;
 }
-.floating-effect{
+.floating-effect {
   transform: translatey(0px);
   animation: float 3s ease-in-out infinite;
 }
 @keyframes float {
-	0% {
-		transform: translatey(0px);
-	}
-	50% {
-		transform: translatey(-40px);
-	}
-	100% {
-		transform: translatey(0px);
-	}
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-40px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
 }
-.vibrate-effect{
+.vibrate-effect {
   transform: translatex(0px);
   animation: vibrate 2s ease-in-out infinite;
 }
 @keyframes vibrate {
-	0% {
-		transform: translatex(0px);
-	}
-	10% {
-		transform: translatex(5px);
+  0% {
+    transform: translatex(0px);
+  }
+  10% {
+    transform: translatex(5px);
   }
   20% {
-		transform: translatex(0px);
-	}
-	100% {
-		transform: translatex(0px);
-	}
+    transform: translatex(0px);
+  }
+  100% {
+    transform: translatex(0px);
+  }
 }
-.sound-effect{
+.sound-effect {
   transform: scale(1);
   animation: sound 1s ease-in-out infinite;
 }
 @keyframes sound {
-	0% {
-		transform: scale(1);
-	}
-	15% {
-		transform: scale(1.1);
+  0% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.1);
   }
   30% {
-		transform: scale(1);
-	}
+    transform: scale(1);
+  }
   100% {
-		transform: scale(1);
-	}
+    transform: scale(1);
+  }
 }
 .floating-effect:hover,
 .vibrate-effect:hover,
 .rotate-effect:hover,
-.sound-effect:hover{
+.sound-effect:hover {
   animation-play-state: paused;
 }
